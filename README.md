@@ -2422,7 +2422,7 @@ nan
 [Twitter](https://twitter.com/intent/tweet?url=https://github.com/satwikkansal/wtfpython&hastags=python,wtfpython)
  | [Linkedin](https://www.linkedin.com/shareArticle?url=https://github.com/satwikkansal&title=What%20the%20f*ck%20Python!&summary=An%20interesting%20collection%20of%20subtle%20and%20tricky%20Python%20snippets.)
 
-## Need a pdf version?/需要來一份 pdf 版的?
+## Need a pdf version?/需要來一份 pdf 版?
 
 我收到一些想要pdf版本的需求. 你可以快速在[這](https://satwikkansal.xyz/wtfpython-pdf/)獲得.
 
