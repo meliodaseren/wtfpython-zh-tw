@@ -16,7 +16,7 @@
 [![WTFPL 2.0][license-image]][license-url] [![Commit id][commit-image]][commit-url]
 
 
-Python, 是一個設計優美的解釋型高級語言, 它提供了很多能讓程序員感到舒適的功能特性. 但有的時候, Python 的一些輸出結果對於初學者來說似乎並不是那麼一目了然.
+Python，是一個設計優美的解釋型高級語言, 它提供了很多能讓程序員感到舒適的功能特性. 但有的時候, Python 的一些輸出結果對於初學者來說似乎並不是那麼一目了然.
 
 這個有趣的項目意在收集 Python 中那些難以理解和反人類直覺的例子以及鮮為人知的功能特性, 並嘗試討論這些現像背後真正的原理!
 
@@ -36,7 +36,7 @@ PS: 如果你不是第一次讀了, 你可以在[這裡](https://github.com/satw
 - [Usage/用法](#usage用法)
 - [👀 Examples/示例](#-examples示例)
     - [Section: Strain your brain!/大腦運動!](#section-strain-your-brain大腦運動)
-        - [> Strings can be tricky sometimes/微妙的字符串 *](#-strings-can-be-tricky-sometimes微妙的字符串-)
+        - [> Strings can be tricky sometimes/微妙的字串 *](#-strings-can-be-tricky-sometimes微妙的字串-)
         - [> Time for some hash brownies!/是時候來點蛋糕了!](#-time-for-some-hash-brownies是時候來點蛋糕了)
         - [> Return return everywhere!/到處返回！](#-return-return-everywhere到處返回)
         - [> Deep down, we're all the same./本質上,我們都一樣. *](#-deep-down-were-all-the-same本質上我們都一樣-)
@@ -47,11 +47,11 @@ PS: 如果你不是第一次讀了, 你可以在[這裡](https://github.com/satw
         - [> The sticky output function/麻煩的輸出](#-the-sticky-output-function麻煩的輸出)
         - [> `is not ...` is not `is (not ...)`/`is not ...` 不是 `is (not ...)`](#-is-not--is-not-is-not-is-not--不是-is-not-)
         - [> The surprising comma/意外的逗號](#-the-surprising-comma意外的逗號)
-        - [> Backslashes at the end of string/字符串末尾的反斜杠](#-backslashes-at-the-end-of-string字符串末尾的反斜杠)
+        - [> Backslashes at the end of string/字串末尾的反斜線](#-backslashes-at-the-end-of-string字串末尾的反斜線)
         - [> not knot!/別糾結!](#-not-knot別糾結)
         - [> Half triple-quoted strings/三個引號](#-half-triple-quoted-strings三個引號)
         - [> Midnight time doesn't exist?/不存在的午夜?](#-midnight-time-doesnt-exist不存在的午夜)
-        - [> What's wrong with booleans?/布爾你咋了?](#-whats-wrong-with-booleans布爾你咋了)
+        - [> What's wrong with booleans?/布爾你怎麼了?](#-whats-wrong-with-booleans布爾你怎麼了)
         - [> Class attributes and instance attributes/類屬性和實例屬性](#-class-attributes-and-instance-attributes類屬性和實例屬性)
         - [> yielding None/生成 None](#-yielding-none生成-none)
         - [> Mutating the immutable!/強人所難](#-mutating-the-immutable強人所難)
@@ -82,22 +82,22 @@ PS: 如果你不是第一次讀了, 你可以在[這裡](https://github.com/satw
         - [> `goto`, but why?/`goto`, 但為什麼? *](#-goto-but-whygoto-但為什麼-)
         - [> Brace yourself!/做好思想准備 *](#-brace-yourself做好思想准備-)
         - [> Let's meet Friendly Language Uncle For Life/讓生活更友好 *](#-lets-meet-friendly-language-uncle-for-life讓生活更友好-)
-        - [> Even Python understands that love is complicated/連Python也知道愛是難言的 *](#-even-python-understands-that-love-is-complicated連Python也知道愛是難言的-)
+        - [> Even Python understands that love is complicated/連 Python 也知道愛是難言的 *](#-even-python-understands-that-love-is-complicated連-Python-也知道愛是難言的-)
         - [> Yes, it exists!/是的, 它存在!](#-yes-it-exists是的-它存在)
         - [> Inpinity/無限 *](#-inpinity無限-)
         - [> Mangling time!修飾時間! *](#-mangling-time修飾時間-)
     - [Section: Miscellaneous/雜項](#section-miscellaneous雜項)
         - [> `+=` is faster/更快的 `+=` ](#--is-faster更快的-)
-        - [> Let's make a giant string!/來做個巨大的字符串吧!](#-lets-make-a-giant-string來做個巨大的字符串吧)
-        - [> Explicit typecast of strings/字符串的顯式類型轉換](#-explicit-typecast-of-strings字符串的顯式類型轉換)
+        - [> Let's make a giant string!/來做個巨大的字串吧!](#-lets-make-a-giant-string來做個巨大的字串吧)
+        - [> Explicit typecast of strings/字串的顯式類型轉換](#-explicit-typecast-of-strings字串的顯式類型轉換)
         - [> Minor Ones/小知識點](#-minor-ones小知識點)
 - [Contributing/貢獻](#contributing貢獻)
 - [Acknowledgements/致謝](#acknowledgements致謝)
 - [🎓 License/許可](#-license許可)
     - [Help/幫助](#help幫助)
     - [Surprise your geeky pythonist friends?/想給你的極客朋友一個驚喜?](#surprise-your-geeky-pythonist-friends想給你的極客朋友一個驚喜)
-    - [Need a pdf version?/需要來一份pdf版的?](#need-a-pdf-version需要來一份pdf版的)
-    - [Follow Commit/追蹤Commit](#follow-commit追蹤Commit)
+    - [Need a pdf version?/需要來一份 pdf 版?](#need-a-pdf-version需要來一份-pdf-版)
+    - [Follow Commit/追蹤 Commit](#follow-commit追蹤-Commit)
 
 <!-- /TOC -->
 
@@ -166,7 +166,7 @@ $ pip install wtfpython -U
 
 ## Section: Strain your brain!/大腦運動!
 
-### > Strings can be tricky sometimes/微妙的字符串 *
+### > Strings can be tricky sometimes/微妙的字串 *
 
 1\.
 ```py
@@ -205,17 +205,17 @@ False
 很好理解, 對吧?
 
 #### 💡 說明:
-- 這些行為是由於 Cpython 在編譯優化時, 某些情況下會嘗試使用已經存在的不可變對像而不是每次都創建一個新對像. (這種行為被稱作字符串的駐留[string interning])
-- 發生駐留之後, 許多變量可能指向內存中的相同字符串對像. (從而節省內存)
-- 在上面的代碼中, 字符串是隱式駐留的. 何時發生隱式駐留則取決於具體的實現. 這裡有一些方法可以用來猜測字符串是否會被駐留:
-  - 所有長度為 0 和長度為 1 的字符串都被駐留.
-  - 字符串在編譯時被實現 (`'wtf'` 將被駐留, 但是 `''.join(['w', 't', 'f']` 將不會被駐留)
-  - 字符串中只包含字母，數字或下劃線時將會駐留. 所以 `'wtf!'` 由於包含 `!` 而未被駐留. 可以在[這裡](https://github.com/python/cpython/blob/3.6/Objects/codeobject.c#L19)找到 CPython 對此規則的實現.
+- 這些行為是由於 Cpython 在編譯優化時, 某些情況下會嘗試使用已經存在的不可變對像而不是每次都創建一個新對像. (這種行為被稱作字串的駐留[string interning])
+- 發生駐留之後, 許多變量可能指向內存中的相同字串對像. (從而節省內存)
+- 在上面的代碼中, 字串是隱式駐留的. 何時發生隱式駐留則取決於具體的實現. 這裡有一些方法可以用來猜測字串是否會被駐留:
+  - 所有長度為 0 和長度為 1 的字串都被駐留.
+  - 字串在編譯時被實現 (`'wtf'` 將被駐留, 但是 `''.join(['w', 't', 'f']` 將不會被駐留)
+  - 字串中只包含字母，數字或下劃線時將會駐留. 所以 `'wtf!'` 由於包含 `!` 而未被駐留. 可以在[這裡](https://github.com/python/cpython/blob/3.6/Objects/codeobject.c#L19)找到 CPython 對此規則的實現.
 
     <img src="/images/string-intern/string_intern.png" alt="">
 
 - 當在同一行將 `a` 和 `b` 的值設置為 `"wtf!"` 的時候, Python 解釋器會創建一個新對像, 然後同時引用第二個變量. 如果你在不同的行上進行賦值操作, 它就不會“知道”已經有一個 `wtf！` 對像 (因為 `"wtf!"` 不是按照上面提到的方式被隱式駐留的). 它是一種編譯器優化, 特別適用於交互式環境.
-- 常量折疊(constant folding) 是 Python 中的一種 [窺孔優化(peephole optimization)](https://en.wikipedia.org/wiki/Peephole_optimization) 技術. 這意味著在編譯時表達式 `'a'*20` 會被替換為 `'aaaaaaaaaaaaaaaaaaaa'` 以減少運行時的時鐘周期. 只有長度小於 20 的字符串才會發生常量折疊. (為啥? 想像一下由於表達式 `'a'*10**10` 而生成的 `.pyc` 文件的大小). 相關的源碼實現在[這裡](https://github.com/python/cpython/blob/3.6/Python/peephole.c#L288).
+- 常量折疊(constant folding) 是 Python 中的一種 [窺孔優化(peephole optimization)](https://en.wikipedia.org/wiki/Peephole_optimization) 技術. 這意味著在編譯時表達式 `'a'*20` 會被替換為 `'aaaaaaaaaaaaaaaaaaaa'` 以減少運行時的時鐘周期. 只有長度小於 20 的字串才會發生常量折疊. (為啥? 想像一下由於表達式 `'a'*10**10` 而生成的 `.pyc` 文件的大小). 相關的源碼實現在[這裡](https://github.com/python/cpython/blob/3.6/Python/peephole.c#L288).
 
 
 ---
@@ -660,7 +660,7 @@ SyntaxError: invalid syntax
 - **注意:** 尾隨逗號的問題已經在Python 3.6中被[修復](https://bugs.python.org/issue9232)了. 而這篇[帖子](https://bugs.python.org/issue9232#msg248399)中則簡要討論了Python中尾隨逗號的不同用法.
 ---
 
-### > Backslashes at the end of string/字符串末尾的反斜杠
+### > Backslashes at the end of string/字串末尾的反斜線
 
 **Output:**
 ```
@@ -678,12 +678,12 @@ SyntaxError: EOL while scanning string literal
 
 #### 💡 說明:
 
-- 在以 `r` 開頭的原始字符串中, 反斜杠並沒有特殊含義.
+- 在以 `r` 開頭的原始字串中, 反斜線並沒有特殊含義.
   ```py
   >>> print(repr(r"wt\"f"))
   'wt\\"f'
   ```
-- 解釋器所做的只是簡單的改變了反斜杠的行為, 因此會直接放行反斜杠及後一個的字符. 這就是反斜杠在原始字符串末尾不起作用的原因.
+- 解釋器所做的只是簡單的改變了反斜線的行為, 因此會直接放行反斜線及後一個的字符. 這就是反斜線在原始字串末尾不起作用的原因.
 
 ---
 
@@ -728,14 +728,14 @@ wtfpython
 ```
 
 #### 💡 說明:
-+ Python 提供隱式的[字符串鏈接](https://docs.python.org/2/reference/lexical_analysis.html#string-literal-concatenation), 例如,
++ Python 提供隱式的[字串鏈接](https://docs.python.org/2/reference/lexical_analysis.html#string-literal-concatenation), 例如,
   ```
   >>> print("wtf" "python")
   wtfpython
   >>> print("wtf" "") # or "wtf"""
   wtf
   ```
-+ `'''` 和 `"""` 在 Python中也是字符串定界符, Python 解釋器在先遇到三個引號的的時候會嘗試再尋找三個終止引號作為定界符, 如果不存在則會導致 `SyntaxError` 異常.
++ `'''` 和 `"""` 在 Python中也是字串定界符, Python 解釋器在先遇到三個引號的的時候會嘗試再尋找三個終止引號作為定界符, 如果不存在則會導致 `SyntaxError` 異常.
 
 ---
 
@@ -770,7 +770,7 @@ midnight_time 並沒有被輸出.
 
 ---
 
-### > What's wrong with booleans?/布爾你咋了?
+### > What's wrong with booleans?/布爾你怎麼了?
 
 1\.
 ```py
@@ -1149,7 +1149,7 @@ str
 
 #### 💡 說明:
 
-* 由於 `SomeClass` 會從 `str` 自動繼承 `__hash__` 方法, 所以 `s` 對像和 `"s"` 字符串的哈希值是相同的.
+* 由於 `SomeClass` 會從 `str` 自動繼承 `__hash__` 方法, 所以 `s` 對像和 `"s"` 字串的哈希值是相同的.
 * 而 `SomeClass("s") == "s"` 為 `True` 是因為 `SomeClass` 也繼承了 `str` 類 `__eq__` 方法.
 * 由於兩者的哈希值相同且相等, 所以它們在字典中表示相同的鍵.
 * 如果想要實現期望的功能, 我們可以重定義 `SomeClass` 的 `__eq__` 方法.
@@ -1896,7 +1896,7 @@ tuple()
 
 #### 💡 說明:
 * 對於 1, 正確的語句是 `x, y = (0, 1) if True else (None, None)`.
-* 對於 2, 正確的語句是 `t = ('one',)` 或者 `t = 'one',` (缺少逗號) 否則解釋器會認為 `t` 是一個字符串, 並逐個字符對其進行迭代.
+* 對於 2, 正確的語句是 `t = ('one',)` 或者 `t = 'one',` (缺少逗號) 否則解釋器會認為 `t` 是一個字串, 並逐個字符對其進行迭代.
 * `()` 是一個特殊的標記，表示空元組.
 
 ---
@@ -2002,7 +2002,7 @@ True
 - (譯: 雖然文檔中沒寫，但應該是只能在交互解釋器中使用.)
 ---
 
-### > Even Python understands that love is complicated/連Python也知道愛是難言的 *
+### > Even Python understands that love is complicated/連 Python 也知道愛是難言的 *
 
 ```py
 import this
@@ -2181,20 +2181,20 @@ True
 ### > `+=` is faster/更快的 `+=`
 
 ```py
-# 用 "+" 連接三個字符串:
+# 用 "+" 連接三個字串:
 >>> timeit.timeit("s1 = s1 + s2 + s3", setup="s1 = ' ' * 100000; s2 = ' ' * 100000; s3 = ' ' * 100000", number=100)
 0.25748300552368164
-# 用 "+=" 連接三個字符串:
+# 用 "+=" 連接三個字串:
 >>> timeit.timeit("s1 += s2 + s3", setup="s1 = ' ' * 100000; s2 = ' ' * 100000; s3 = ' ' * 100000", number=100)
 0.012188911437988281
 ```
 
 #### 💡 說明:
-+ 連接兩個以上的字符串時 `+=` 比 `+` 更快, 因為在計算過程中第一個字符串 (例如, `s1 += s2 + s3` 中的 `s1`) 不會被銷毀.(譯: 就是 `+=` 執行的是追加操作，少了一個銷毀新建的動作.)
++ 連接兩個以上的字串時 `+=` 比 `+` 更快, 因為在計算過程中第一個字串 (例如, `s1 += s2 + s3` 中的 `s1`) 不會被銷毀.(譯: 就是 `+=` 執行的是追加操作，少了一個銷毀新建的動作.)
 
 ---
 
-### > Let's make a giant string!/來做個巨大的字符串吧！
+### > Let's make a giant string!/來做個巨大的字串吧！
 
 ```py
 def add_string_with_plus(iters):
@@ -2259,8 +2259,8 @@ def convert_list_to_string(l, iters):
 
 #### 💡 說明:
 - 你可以在這獲得更多 [timeit](https://docs.python.org/3/library/timeit.html) 的相關信息. 它通常用於衡量代碼片段的執行時間.
-- 不要用 `+` 去生成過長的字符串, 在 Python 中, `str` 是不可變得, 所以在每次連接中你都要把左右兩個字符串復制到新的字符串中. 如果你連接四個長度為10的字符串, 你需要拷貝 (10+10) + ((10+10)+10) + (((10+10)+10)+10) = 90 個字符而不是 40 個字符. 隨著字符串的數量和大小的增加, 情況會變得越發的糟糕 (就像`add_bytes_with_plus` 函數的執行時間一樣)
-- 因此, 更建議使用 `.format.` 或 `%` 語法 (但是, 對於短字符串, 它們比 `+` 稍慢一點).
+- 不要用 `+` 去生成過長的字串, 在 Python 中, `str` 是不可變得, 所以在每次連接中你都要把左右兩個字串復制到新的字串中. 如果你連接四個長度為10的字串, 你需要拷貝 (10+10) + ((10+10)+10) + (((10+10)+10)+10) = 90 個字符而不是 40 個字符. 隨著字串的數量和大小的增加, 情況會變得越發的糟糕 (就像`add_bytes_with_plus` 函數的執行時間一樣)
+- 因此, 更建議使用 `.format.` 或 `%` 語法 (但是, 對於短字串, 它們比 `+` 稍慢一點).
 - 又或者, 如果你所需的內容已經以可迭代對像的形式提供了, 使用 `''.join(可迭代對像)` 要快多了.
 - `add_string_with_plus` 的執行時間沒有像 `add_bytes_with_plus` 一樣出現二次增加是因為解釋器會如同上一個列子所討論的一樣優化 `+=`. 用 `s = s + "x" + "y" + "z"` 替代 `s += "xyz"` 的話, 執行時間就會二次增加了.
   ```py
@@ -2278,12 +2278,12 @@ def convert_list_to_string(l, iters):
 
 ---
 
-### > Explicit typecast of strings/字符串的顯式類型轉換
+### > Explicit typecast of strings/字串的顯式類型轉換
 
 ```py
 a = float('inf')
 b = float('nan')
-c = float('-iNf')  # 這些字符串不區分大小寫
+c = float('-iNf')  # 這些字串不區分大小寫
 d = float('nan')
 ```
 
@@ -2313,20 +2313,20 @@ nan
 
 #### 💡 說明:
 
-`'inf'` 和 `'nan'` 是特殊的字符串(不區分大小寫), 當顯示轉換成 `float` 型時, 它們分別用於表示數學意義上的 "無窮大" 和 "非數字".
+`'inf'` 和 `'nan'` 是特殊的字串(不區分大小寫), 當顯示轉換成 `float` 型時, 它們分別用於表示數學意義上的 "無窮大" 和 "非數字".
 
 ---
 
 ### > Minor Ones/小知識點
 
-* `join()` 是一個字符串操作而不是列表操作. (第一次接觸會覺得有點違反直覺)
+* `join()` 是一個字串操作而不是列表操作. (第一次接觸會覺得有點違反直覺)
 
   **💡 說明:**
-  如果 `join()` 是字符串方法 那麼它就可以處理任何可迭代的對像(列表，元組，迭代器). 如果它是列表方法, 則必須在每種類型中單獨實現. 另外, 在 `list` 對像的通用API中實現一個專用於字符串的方法沒有太大的意義.
+  如果 `join()` 是字串方法 那麼它就可以處理任何可迭代的對像(列表，元組，迭代器). 如果它是列表方法, 則必須在每種類型中單獨實現. 另外, 在 `list` 對像的通用API中實現一個專用於字串的方法沒有太大的意義.
 
 * 看著奇怪但能正確運行的語句:
   + `[] = ()` 語句在語義上是正確的 (解包一個空的 `tuple` 並賦值給 `list`)
-  + `'a'[0][0][0][0][0]` 在語義上也是正確的, 因為在 Python 中字符串同時也是[序列](https://docs.python.org/3/glossary.html#term-sequence)(可迭代對像支持使用整數索引訪問元素).
+  + `'a'[0][0][0][0][0]` 在語義上也是正確的, 因為在 Python 中字串同時也是[序列](https://docs.python.org/3/glossary.html#term-sequence)(可迭代對像支持使用整數索引訪問元素).
   + `3 --0-- 5 == 8` 和 `--5 == 5` 在語義上都是正確的, 且結果等於 `True`.(譯: 3減負0等於3，再減負5相當於加5等於8；負的負5等於5.)
 
 * 鑒於 `a` 是一個數組, `++a` 和 `--a` 都是有效的 Python 語句, 但其效果與 C, C++ 或 Java 等不一樣.
@@ -2377,7 +2377,7 @@ nan
           result += (s[i:i + len(sub)] == sub)
       return result
   ```
-  這個行為是由於空子串(`''`)與原始字符串中長度為0的切片相匹配導致的.
+  這個行為是由於空子串(`''`)與原始字串中長度為0的切片相匹配導致的.
 
 ---
 
@@ -2422,11 +2422,11 @@ nan
 [Twitter](https://twitter.com/intent/tweet?url=https://github.com/satwikkansal/wtfpython&hastags=python,wtfpython)
  | [Linkedin](https://www.linkedin.com/shareArticle?url=https://github.com/satwikkansal&title=What%20the%20f*ck%20Python!&summary=An%20interesting%20collection%20of%20subtle%20and%20tricky%20Python%20snippets.)
 
-## Need a pdf version?/需要來一份pdf版的?
+## Need a pdf version?/需要來一份 pdf 版的?
 
 我收到一些想要pdf版本的需求. 你可以快速在[這](https://satwikkansal.xyz/wtfpython-pdf/)獲得.
 
-## Follow Commit/追蹤Commit
+## Follow Commit/追蹤 Commit
 
 這是中文版 fork 時所處的原庫 Commit, 當原庫更新時我會跟隨更新.
 

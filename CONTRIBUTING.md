@@ -1,11 +1,11 @@
-* 欢迎为本项目提供帮助。
+* 歡迎為本項目提供幫助。
 
-* 本项目是以案例为单位提交的 commit, 如果您觉得我的翻译有问题或看不懂的时候，打开 commit 记录找到对应的例子就可以快速获取文章的中英文对照。
+* 本項目是以案例為單位提交的 commit, 如果您覺得我的翻譯有問題或看不懂的時候，打開 commit 記錄找到對應的例子就可以快速獲取文章的中英文對照。
 
-* 您可以随意开一个 issue 或者 pull requests 与我讨论你觉得有问题的翻译，请不要有任何顾虑。毕竟讨论出真知。
+* 您可以隨意開一個 issue 或者 pull requests 與我討論你覺得有問題的翻譯，請不要有任何顧慮。畢竟討論出真知。
 
-* 如果你有什么新的 Python 的有趣案例想与大家分享，优先推荐你提交给[原项目](https://github.com/satwikkansal/wtfpython/)。当然也可以直接提交给本项目。
+* 如果你有什麼新的 Python 的有趣案例想與大家分享，優先推薦你提交給[原項目](https://github.com/satwikkansal/wtfpython/)。當然也可以直接提交給本項目。
 
-* 为了保持本项目 commit 记录能持续以案例为单位，当您的修改建议被采纳时，我可能无法直接将您的pull requests merge 进来。这点希望您能谅解。
+* 為了保持本項目 commit 記錄能持續以案例為單位，當您的修改建議被采納時，我可能無法直接將您的pull requests merge 進來。這點希望您能諒解。
 
-* 我会将您的 GitHub 账号加入[贡献列表](https://github.com/leisurelicht/wtfpython-cn/blob/master/CONTRIBUTORS.md)中，同时会在相关的 issue 或 pull requests 中通知您。
+* 我會將您的 GitHub 賬號加入[貢獻列表](https://github.com/leisurelicht/wtfpython-cn/blob/master/CONTRIBUTORS.md)中，同時會在相關的 issue 或 pull requests 中通知您。
