@@ -109,7 +109,7 @@ PS: 如果你不是第一次讀了, 你可以在[這裡](https://github.com/satw
 > 標題末尾的星號表示該示例在第一版中不存在，是最近添加的.
 >
 > ```py
-> # 准備代碼.
+> # 準備代碼.
 > # 釋放魔法...
 > ```
 >
@@ -206,7 +206,7 @@ False
 
 #### 💡 說明:
 - 這些行為是由於 Cpython 在編譯優化時, 某些情況下會嘗試使用已經存在的不可變對像而不是每次都創建一個新對像. (這種行為被稱作字串的駐留 [string interning] )
-- 發生駐留之後, 許多變量可能指向內存中的相同字串對像. (從而節省內存)
+- 發生駐留之後, 許多變量可能指向內存中的相同字串對像 (從而節省內存).
 - 在上面的代碼中, 字串是隱式駐留的. 何時發生隱式駐留則取決於具體的實現. 這裡有一些方法可以用來猜測字串是否會被駐留:
   - 所有長度為 0 和長度為 1 的字串都被駐留.
   - 字串在編譯時被實現 (`'wtf'` 將被駐留, 但是 `''.join(['w', 't', 'f']` 將不會被駐留)
@@ -214,14 +214,14 @@ False
 
     <img src="/images/string-intern/string_intern.png" alt="">
 
-- 當在同一行將 `a` 和 `b` 的值設置為 `"wtf!"` 的時候, Python 解釋器會創建一個新對像, 然後同時引用第二個變量. 如果你在不同的行上進行賦值操作, 它就不會“知道”已經有一個 `wtf！` 對像 (因為 `"wtf!"` 不是按照上面提到的方式被隱式駐留的). 它是一種編譯器優化, 特別適用於交互式環境.
+- 當在同一行將 `a` 和 `b` 的值設置為 `"wtf!"` 的時候, Python 解釋器會創建一個新對像, 然後同時引用第二個變量. 如果你在不同的行上進行賦值操作, 它就不會 “知道” 已經有一個 `wtf！` 對像 (因為 `"wtf!"` 不是按照上面提到的方式被隱式駐留的). 它是一種編譯器優化, 特別適用於交互式環境.
 - 常量折疊 (constant folding) 是 Python 中的一種 [窺孔優化 (peephole optimization)](https://en.wikipedia.org/wiki/Peephole_optimization) 技術. 這意味著在編譯時表達式 `'a'*20` 會被替換為 `'aaaaaaaaaaaaaaaaaaaa'` 以減少運行時的時鐘周期. 只有長度小於 20 的字串才會發生常量折疊. (為啥? 想像一下由於表達式 `'a'*10**10` 而生成的 `.pyc` 文件的大小). 相關的源碼實現在[這裡](https://github.com/python/cpython/blob/3.6/Python/peephole.c#L288).
 
 
 ---
 
 ### > Time for some hash brownies!/是時候來點蛋糕了!
-* hash brownie指一種含有大麻成分的蛋糕, 所以這裡是句雙關
+* hash brownie 指一種含有大麻成分的蛋糕, 所以這裡是句雙關
 
 1\.
 ```py
@@ -254,8 +254,8 @@ some_dict[5] = "Python"
   True
   ```
   **注意:** 具有不同值的對像也可能具有相同的哈希值（哈希衝突）.
-* 當執行 `some_dict[5] = "Python"` 語句時, 因為Python將 `5` 和 `5.0` 識別為 `some_dict` 的同一個鍵, 所以已有值 "JavaScript" 就被 "Python" 覆蓋了.
-* 這個 StackOverflow的[回答](https://stackoverflow.com/a/32211042/4354153)漂亮的解釋了這背後的基本原理.
+* 當執行 `some_dict[5] = "Python"` 語句時, 因為 Python 將 `5` 和 `5.0` 識別為 `some_dict` 的同一個鍵, 所以已有值 "JavaScript" 就被 "Python" 覆蓋了.
+* 這個 StackOverflow 的[回答](https://stackoverflow.com/a/32211042/4354153)漂亮的解釋了這背後的基本原理.
 
 ---
 
@@ -277,7 +277,7 @@ def some_func():
 
 #### 💡 說明:
 
-- 當在 "try...finally" 語句的 `try` 中執行 `return`, `break` 或 `continue` 後, `finally` 子句依然會執行.
+- 當在 `try...finally` 語句的 `try` 中執行 `return`, `break` 或 `continue` 後, `finally` 子句依然會執行.
 - 函數的返回值由最後執行的 `return` 語句決定. 由於 `finally` 子句一定會執行, 所以 `finally` 子句中的 `return` 將始終是最後執行的語句.
 
 ---
