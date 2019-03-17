@@ -6,7 +6,7 @@
 
 <p align="center"><img src="/images/logo.png" alt=""></p>
 <h1 align="center">What the f*ck Python! 🐍</h1>
-<p align="center">一些有趣且鮮為人知的 Python 特性.</p>
+<p align="center">一些令人驚訝且鮮為人知的 Python 代碼片段</p>
 
 <p align="center">
 <a href="https://github.com/satwikkansal/wtfpython">English</a>
