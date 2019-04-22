@@ -173,6 +173,12 @@ $ pip install wtfpython -U
 ```
 
 2\.
+這段例子目前在 3.7 和 3.6 得到的結果不同，可以參考下面兩個 issues 的討論：
+
+https://github.com/satwikkansal/wtfpython/issues/120
+
+https://github.com/leisurelicht/wtfpython-cn/issues/13
+
 ```py
 >>> a = "wtf"
 >>> b = "wtf"
