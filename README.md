@@ -1,9 +1,3 @@
-[wtfpython English](https://github.com/satwikkansal/wtfpython)
-
-[wtfpython 简体中文](https://github.com/leisurelicht/wtfpython-cn)
-
----
-
 <p align="center"><img src="/images/logo.png" alt=""></p>
 <h1 align="center">What the f*ck Python! 🐍</h1>
 <p align="center">一些令人驚訝且鮮為人知的 Python 代碼片段</p>
