@@ -12,6 +12,7 @@
 <a href="https://github.com/satwikkansal/wtfpython">English</a>
 | <a href="https://github.com/leisurelicht/wtfpython-cn">簡體中文</a>
 </p>
+
 [![WTFPL 2.0][license-image]][license-url] [![Commit id][commit-image]][commit-url] [![996.icu][996.icu-image]][996.icu-url]
 
 
