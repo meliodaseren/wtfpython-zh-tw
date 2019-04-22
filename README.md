@@ -179,6 +179,8 @@ https://github.com/satwikkansal/wtfpython/issues/120
 
 https://github.com/leisurelicht/wtfpython-cn/issues/13
 
+https://bugs.python.org/issue36592
+
 ```py
 >>> a = "wtf"
 >>> b = "wtf"
