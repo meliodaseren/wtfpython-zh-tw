@@ -4,23 +4,23 @@
 
 <p align="center">
 <a href="https://github.com/satwikkansal/wtfpython">English</a>
-| <a href="#">中文</a>
+| <a href="#">簡體中文</a>
 </p>
 
 [![WTFPL 2.0][license-image]][license-url] [![Commit id][commit-image]][commit-url] [![996.icu][996.icu-image]][996.icu-url]
 
 
-Python, 是一個設計優美的解釋型高級語言, 它提供了很多能讓程序員感到舒適的功能特性. 但有的時候, Python 的一些輸出結果對於初學者來說似乎並不是那麽一目了然.
+Python，是一個設計優美的解釋型高級語言，它提供了很多能讓程序員感到舒適的功能特性. 但有的時候，Python 的一些輸出結果對於初學者來說似乎並不是那麽一目了然.
 
-這個有趣的項目意在收集 Python 中那些難以理解和反人類直覺的例子以及鮮為人知的功能特性, 並嘗試討論這些現象背後真正的原理!
+這個有趣的項目意在收集 Python 中那些難以理解和反人類直覺的例子以及鮮為人知的功能特性，並嘗試討論這些現象背後真正的原理!
 
-雖然下面的有些例子並不一定會讓你覺得 WTFs, 但它們依然有可能會告訴你一些你所不知道的 Python 有趣特性.  我覺得這是一種學習編程語言內部原理的好辦法, 而且我相信你也會從中獲得樂趣!
+雖然下面的有些例子並不一定會讓你覺得 WTFs，但它們依然有可能會告訴你一些你所不知道的 Python 有趣特性.  我覺得這是一種學習編程語言內部原理的好辦法，而且我相信你也會從中獲得樂趣!
 
-如果您是一位經驗比較豐富的 Python 程序員, 你可以嘗試挑戰看是否能一次就找到例子的正確答案. 你可能對其中的一些例子已經比較熟悉了, 那這也許能喚起你當年踩這些坑時的甜蜜回憶 :sweat_smile:
+如果您是一位經驗比較豐富的 Python 程序員，你可以嘗試挑戰看是否能一次就找到例子的正確答案. 你可能對其中的一些例子已經比較熟悉了，那這也許能喚起你當年踩這些坑時的甜蜜回憶 :sweat_smile:
 
-PS: 如果你不是第一次讀了, 你可以在[這裏](https://github.com/satwikkansal/wtfpython/releases/)獲取變動內容.
+PS: 如果你不是第一次讀了，你可以在[這裏](https://github.com/satwikkansal/wtfpython/releases/)獲取變動內容.
 
-那麽, 讓我們開始吧...
+那麽，讓我們開始吧...
 
 # Table of Contents/目錄
 <!-- TOC -->
@@ -58,7 +58,7 @@ PS: 如果你不是第一次讀了, 你可以在[這裏](https://github.com/satw
     - [Section: Appearances are deceptive!/外表是靠不住的!](#section-appearances-are-deceptive外表是靠不住的)
         - [> Skipping lines?/跳過一行?](#-skipping-lines跳過一行)
         - [> Teleportation/空間移動 *](#-teleportation空間移動-)
-        - [> Well, something is fishy.../嗯, 有些可疑...](#-well-something-is-fishy嗯有些可疑)
+        - [> Well, something is fishy.../嗯，有些可疑...](#-well-something-is-fishy嗯有些可疑)
     - [Section: Watch out for the landmines!/小心地雷!](#section-watch-out-for-the-landmines小心地雷)
         - [> Modifying a dictionary while iterating over it/叠代字典時的修改](#-modifying-a-dictionary-while-iterating-over-it叠代字典時的修改)
         - [> Stubborn `del` operator/堅強的 `del` *](#-stubborn-del-operator堅強的-del-)
@@ -72,12 +72,12 @@ PS: 如果你不是第一次讀了, 你可以在[這裏](https://github.com/satw
         - [> Name resolution ignoring class scope/忽略類作用域的名稱解析](#-name-resolution-ignoring-class-scope忽略類作用域的名稱解析)
         - [> Needle in a Haystack/大海撈針](#-needle-in-a-haystack大海撈針)
     - [Section: The Hidden treasures!/隱藏的寶藏!](#section-the-hidden-treasures隱藏的寶藏)
-        - [> Okay Python, Can you make me fly?/Python, 可否帶我飛? *](#-okay-python-can-you-make-me-flypython-可否帶我飛-)
-        - [> `goto`, but why?/`goto`, 但為什麽? *](#-goto-but-whygoto-但為什麽-)
+        - [> Okay Python, Can you make me fly?/Python，可否帶我飛? *](#-okay-python-can-you-make-me-flypython-可否帶我飛-)
+        - [> `goto`, but why?/`goto`，但為什麽? *](#-goto-but-whygoto-但為什麽-)
         - [> Brace yourself!/做好思想準備 *](#-brace-yourself做好思想準備-)
         - [> Let's meet Friendly Language Uncle For Life/讓生活更友好 *](#-lets-meet-friendly-language-uncle-for-life讓生活更友好-)
         - [> Even Python understands that love is complicated/連Python也知道愛是難言的 *](#-even-python-understands-that-love-is-complicated連Python也知道愛是難言的-)
-        - [> Yes, it exists!/是的, 它存在!](#-yes-it-exists是的-它存在)
+        - [> Yes, it exists!/是的，它存在!](#-yes-it-exists是的-它存在)
         - [> Inpinity/無限 *](#-inpinity無限-)
         - [> Mangling time!修飾時間! *](#-mangling-time修飾時間-)
     - [Section: Miscellaneous/雜項](#section-miscellaneous雜項)
@@ -120,7 +120,7 @@ PS: 如果你不是第一次讀了, 你可以在[這裏](https://github.com/satw
 >
 > * 簡要說明發生了什麽以及為什麽會發生.
 >   ```py
->   如有必要, 舉例說明
+>   如有必要，舉例說明
 >   ```
 >   **Output:**
 >   ```py
@@ -128,17 +128,17 @@ PS: 如果你不是第一次讀了, 你可以在[這裏](https://github.com/satw
 >   # 一些正常的輸入
 >   ```
 
-**註意:** 所有的示例都在 Python 3.5.2 版本的交互解釋器上測試過, 如果不特別說明應該適用於所有 Python 版本.
+**註意:** 所有的示例都在 Python 3.5.2 版本的交互解釋器上測試過，如果不特別說明應該適用於所有 Python 版本.
 
 # Usage/用法
 
-我個人建議, 最好依次閱讀下面的示例, 並對每個示例:
-- 仔細閱讀設置例子最開始的代碼.  如果您是一位經驗豐富的 Python 程序員, 那麽大多數時候您都能成功預期到後面的結果.
+我個人建議，最好依次閱讀下面的示例，並對每個示例:
+- 仔細閱讀設置例子最開始的代碼.  如果您是一位經驗豐富的 Python 程序員，那麽大多數時候您都能成功預期到後面的結果.
 - 閱讀輸出結果,
   + 確認結果是否如你所料.
   + 確認你是否知道這背後的原理.
-    - 如果不知道, 深呼吸然後閱讀說明 (如果你還是看不明白, 別沈默! 可以在[這](https://github.com/satwikkansal/wtfPython)提個 issue).
-    - 如果知道, 給自己點獎勵, 然後去看下一個例子.
+    - 如果不知道，深呼吸然後閱讀說明 (如果你還是看不明白，別沈默! 可以在[這](https://github.com/satwikkansal/wtfPython)提個 issue).
+    - 如果知道，給自己點獎勵，然後去看下一個例子.
 
 PS: 你也可以在命令行閱讀 WTFpython. 我們有 pypi 包 和 npm 包(支持代碼高亮).(譯: 這兩個都是英文版的)
 
@@ -147,12 +147,12 @@ PS: 你也可以在命令行閱讀 WTFpython. 我們有 pypi 包 和 npm 包(支
 $ npm install -g wtfpython
 ```
 
-或者, 安裝 pypi 包 [`wtfpython`](https://pypi.python.org/pypi/wtfpython)
+或者，安裝 pypi 包 [`wtfpython`](https://pypi.python.org/pypi/wtfpython)
 ```sh
 $ pip install wtfpython -U
 ```
 
-現在, 在命令行中運行 `wtfpython`, 你就可以開始瀏覽了.
+現在，在命令行中運行 `wtfpython`，你就可以開始瀏覽了.
 
 ---
 
@@ -197,26 +197,26 @@ True
 False
 ```
 
-很好理解, 對吧?
+很好理解，對吧?
 
 #### 💡 說明:
-- 這些行為是由於 Cpython 在編譯優化時, 某些情況下會嘗試使用已經存在的不可變對象而不是每次都創建一個新對象. (這種行為被稱作字符串的駐留[string interning])
-- 發生駐留之後, 許多變量可能指向內存中的相同字符串對象. (從而節省內存)
-- 在上面的代碼中, 字符串是隱式駐留的. 何時發生隱式駐留則取決於具體的實現. 這裏有一些方法可以用來猜測字符串是否會被駐留:
+- 這些行為是由於 Cpython 在編譯優化時，某些情況下會嘗試使用已經存在的不可變對象而不是每次都創建一個新對象. (這種行為被稱作字符串的駐留[string interning])
+- 發生駐留之後，許多變量可能指向內存中的相同字符串對象. (從而節省內存)
+- 在上面的代碼中，字符串是隱式駐留的. 何時發生隱式駐留則取決於具體的實現. 這裏有一些方法可以用來猜測字符串是否會被駐留:
   - 所有長度為 0 和長度為 1 的字符串都被駐留.
-  - 字符串在編譯時被實現 (`'wtf'` 將被駐留, 但是 `''.join(['w', 't', 'f'])` 將不會被駐留)
+  - 字符串在編譯時被實現 (`'wtf'` 將被駐留，但是 `''.join(['w', 't', 'f'])` 將不會被駐留)
   - 字符串中只包含字母，數字或下劃線時將會駐留. 所以 `'wtf!'` 由於包含 `!` 而未被駐留. 可以在[這裏](https://github.com/python/cpython/blob/3.6/Objects/codeobject.c#L19)找到 CPython 對此規則的實現.
 
     <img src="/images/string-intern/string_intern.png" alt="">
 
-- 當在同一行將 `a` 和 `b` 的值設置為 `"wtf!"` 的時候, Python 解釋器會創建一個新對象, 然後同時引用第二個變量(譯: 僅適用於3.7以下, 詳細情況請看[這裏](https://github.com/leisurelicht/wtfpython-cn/issues/13)). 如果你在不同的行上進行賦值操作, 它就不會“知道”已經有一個 `wtf！` 對象 (因為 `"wtf!"` 不是按照上面提到的方式被隱式駐留的). 它是一種編譯器優化, 特別適用於交互式環境.
+- 當在同一行將 `a` 和 `b` 的值設置為 `"wtf!"` 的時候，Python 解釋器會創建一個新對象，然後同時引用第二個變量(譯: 僅適用於3.7以下，詳細情況請看[這裏](https://github.com/leisurelicht/wtfpython-cn/issues/13)). 如果你在不同的行上進行賦值操作，它就不會“知道”已經有一個 `wtf！` 對象 (因為 `"wtf!"` 不是按照上面提到的方式被隱式駐留的). 它是一種編譯器優化，特別適用於交互式環境.
 - 常量折疊(constant folding) 是 Python 中的一種 [窺孔優化(peephole optimization)](https://en.wikipedia.org/wiki/Peephole_optimization) 技術. 這意味著在編譯時表達式 `'a'*20` 會被替換為 `'aaaaaaaaaaaaaaaaaaaa'` 以減少運行時的時鐘周期. 只有長度小於 20 的字符串才會發生常量折疊. (為啥? 想象一下由於表達式 `'a'*10**10` 而生成的 `.pyc` 文件的大小). 相關的源碼實現在[這裏](https://github.com/python/cpython/blob/3.6/Python/peephole.c#L288).
 
 
 ---
 
 ### > Time for some hash brownies!/是時候來點蛋糕了!
-* hash brownie指一種含有大麻成分的蛋糕, 所以這裏是句雙關
+* hash brownie指一種含有大麻成分的蛋糕，所以這裏是句雙關
 
 1\.
 ```py
@@ -249,7 +249,7 @@ some_dict[5] = "Python"
   True
   ```
   **註意:** 具有不同值的對象也可能具有相同的哈希值（哈希沖突）.
-* 當執行 `some_dict[5] = "Python"` 語句時, 因為Python將 `5` 和 `5.0` 識別為 `some_dict` 的同一個鍵, 所以已有值 "JavaScript" 就被 "Python" 覆蓋了.
+* 當執行 `some_dict[5] = "Python"` 語句時，因為Python將 `5` 和 `5.0` 識別為 `some_dict` 的同一個鍵，所以已有值 "JavaScript" 就被 "Python" 覆蓋了.
 * 這個 StackOverflow的 [回答](https://stackoverflow.com/a/32211042/4354153) 漂亮的解釋了這背後的基本原理.
 
 ---
@@ -272,8 +272,8 @@ def some_func():
 
 #### 💡 說明:
 
-- 當在 "try...finally" 語句的 `try` 中執行 `return`, `break` 或 `continue` 後, `finally` 子句依然會執行.
-- 函數的返回值由最後執行的 `return` 語句決定. 由於 `finally` 子句一定會執行, 所以 `finally` 子句中的 `return` 將始終是最後執行的語句.
+- 當在 "try...finally" 語句的 `try` 中執行 `return`, `break` 或 `continue` 後，`finally` 子句依然會執行.
+- 函數的返回值由最後執行的 `return` 語句決定. 由於 `finally` 子句一定會執行，所以 `finally` 子句中的 `return` 將始終是最後執行的語句.
 
 ---
 
@@ -298,9 +298,9 @@ True
 
 #### 💡 說明:
 
-* 當調用 `id` 函數時, Python 創建了一個 `WTF` 類的對象並傳給 `id` 函數. 然後 `id` 函數獲取其id值 (也就是內存地址), 然後丟棄該對象. 該對象就被銷毀了.
-* 當我們連續兩次進行這個操作時, Python會將相同的內存地址分配給第二個對象. 因為 (在CPython中) `id` 函數使用對象的內存地址作為對象的id值, 所以兩個對象的id值是相同的.
-* 綜上, 對象的id值僅僅在對象的生命周期內唯一. 在對象被銷毀之後, 或被創建之前, 其他對象可以具有相同的id值.
+* 當調用 `id` 函數時，Python 創建了一個 `WTF` 類的對象並傳給 `id` 函數. 然後 `id` 函數獲取其id值 (也就是內存地址)，然後丟棄該對象. 該對象就被銷毀了.
+* 當我們連續兩次進行這個操作時，Python會將相同的內存地址分配給第二個對象. 因為 (在CPython中) `id` 函數使用對象的內存地址作為對象的id值，所以兩個對象的id值是相同的.
+* 綜上，對象的id值僅僅在對象的生命周期內唯一. 在對象被銷毀之後，或被創建之前，其他對象可以具有相同的id值.
 * 那為什麽 `is` 操作的結果為 `False` 呢? 讓我們看看這段代碼.
   ```py
   class WTF(object):
@@ -323,7 +323,7 @@ True
   D
   True
   ```
-  正如你所看到的, 對象銷毀的順序是造成所有不同之處的原因.
+  正如你所看到的，對象銷毀的順序是造成所有不同之處的原因.
 
 ---
 
@@ -369,9 +369,9 @@ for i, some_dict[i] in enumerate(some_string):
 
   **💡 說明:**
 
-  - 由於循環在Python中工作方式, 賦值語句 `i = 10` 並不會影響叠代循環, 在每次叠代開始之前, 叠代器(這裏指 `range(4)`) 生成的下一個元素就被解包並賦值給目標列表的變量(這裏指 `i`)了.
+  - 由於循環在Python中工作方式，賦值語句 `i = 10` 並不會影響叠代循環，在每次叠代開始之前，叠代器(這裏指 `range(4)`) 生成的下一個元素就被解包並賦值給目標列表的變量(這裏指 `i`)了.
 
-* 在每一次的叠代中, `enumerate(some_string)` 函數就生成一個新值 `i` (計數器增加) 並從 `some_string` 中獲取一個字符. 然後將字典 `some_dict` 鍵 `i` (剛剛分配的) 的值設為該字符. 本例中循環的展開可以簡化為:
+* 在每一次的叠代中，`enumerate(some_string)` 函數就生成一個新值 `i` (計數器增加) 並從 `some_string` 中獲取一個字符. 然後將字典 `some_dict` 鍵 `i` (剛剛分配的) 的值設為該字符. 本例中循環的展開可以簡化為:
   ```py
   >>> i, some_dict[i] = (0, 'w')
   >>> i, some_dict[i] = (1, 't')
@@ -419,11 +419,11 @@ array_2[:] = [1,2,3,4,5]
 
 #### 💡 說明
 
-- 在[生成器](https://wiki.python.org/moin/Generators)表達式中, `in` 子句在聲明時執行, 而條件子句則是在運行時執行.
-- 所以在運行前, `array` 已經被重新賦值為 `[2, 8, 22]`, 因此對於之前的 `1`, `8` 和 `15`, 只有 `count(8)` 的結果是大於 `0` 的, 所以生成器只會生成 `8`.
+- 在[生成器](https://wiki.python.org/moin/Generators)表達式中，`in` 子句在聲明時執行，而條件子句則是在運行時執行.
+- 所以在運行前，`array` 已經被重新賦值為 `[2, 8, 22]`，因此對於之前的 `1`, `8` 和 `15`，只有 `count(8)` 的結果是大於 `0` 的，所以生成器只會生成 `8`.
 - 第二部分中 `g1` 和 `g2` 的輸出差異則是由於變量 `array_1` 和 `array_2` 被重新賦值的方式導致的.
-- 在第一種情況下, `array_1` 被綁定到新對象 `[1,2,3,4,5]`, 因為 `in` 子句是在聲明時被執行的， 所以它仍然引用舊對象 `[1,2,3,4]`(並沒有被銷毀).
-- 在第二種情況下, 對 `array_2` 的切片賦值將相同的舊對象 `[1,2,3,4]` 原地更新為 `[1,2,3,4,5]`. 因此 `g2` 和 `array_2` 仍然引用同一個對象(這個對象現在已經更新為 `[1,2,3,4,5]`).
+- 在第一種情況下，`array_1` 被綁定到新對象 `[1,2,3,4,5]`，因為 `in` 子句是在聲明時被執行的， 所以它仍然引用舊對象 `[1,2,3,4]`(並沒有被銷毀).
+- 在第二種情況下，對 `array_2` 的切片賦值將相同的舊對象 `[1,2,3,4]` 原地更新為 `[1,2,3,4,5]`. 因此 `g2` 和 `array_2` 仍然引用同一個對象(這個對象現在已經更新為 `[1,2,3,4,5]`).
 
 ---
 
@@ -451,9 +451,9 @@ True
 
 **`is` 和 `==` 的區別**
 
-* `is` 運算符檢查兩個運算對象是否引用自同一對象 (即, 它檢查兩個運算對象是否相同).
+* `is` 運算符檢查兩個運算對象是否引用自同一對象 (即，它檢查兩個運算對象是否相同).
 * `==` 運算符比較兩個運算對象的值是否相等.
-* 因此 `is` 代表引用相同, `==` 代表值相等. 下面的例子可以很好的說明這點,
+* 因此 `is` 代表引用相同，`==` 代表值相等. 下面的例子可以很好的說明這點,
   ```py
   >>> [] == []
   True
@@ -461,12 +461,12 @@ True
   False
   ```
 
-**`256` 是一個已經存在的對象, 而 `257` 不是**
+**`256` 是一個已經存在的對象，而 `257` 不是**
 
-當你啟動Python 的時候, `-5` 到 `256` 的數值就已經被分配好了. 這些數字因為經常使用所以適合被提前準備好.
+當你啟動Python 的時候，`-5` 到 `256` 的數值就已經被分配好了. 這些數字因為經常使用所以適合被提前準備好.
 
 引用自 https://docs.python.org/3/c-api/long.html
-> 當前的實現為-5到256之間的所有整數保留一個整數對象數組, 當你創建了一個該範圍內的整數時, 你只需要返回現有對象的引用. 所以改變1的值是有可能的. 我懷疑這種行為在Python中是未定義行為. :-)
+> 當前的實現為-5到256之間的所有整數保留一個整數對象數組，當你創建了一個該範圍內的整數時，你只需要返回現有對象的引用. 所以改變1的值是有可能的. 我懷疑這種行為在Python中是未定義行為. :-)
 
 ```py
 >>> id(256)
@@ -487,7 +487,7 @@ True
 140084850247344
 ```
 
-這裏解釋器並沒有智能到能在執行 `y = 257` 時意識到我們已經創建了一個整數 `257`, 所以它在內存中又新建了另一個對象.
+這裏解釋器並沒有智能到能在執行 `y = 257` 時意識到我們已經創建了一個整數 `257`，所以它在內存中又新建了另一個對象.
 
 **當 `a` 和 `b` 在同一行中使用相同的值初始化時，會指向同一個對象.**
 
@@ -505,8 +505,8 @@ True
 140640774013488
 ```
 
-* 當 a 和 b 在同一行中被設置為 `257` 時, Python 解釋器會創建一個新對象, 然後同時引用第二個變量. 如果你在不同的行上進行, 它就不會 "知道" 已經存在一個 `257` 對象了.
-* 這是一種特別為交互式環境做的編譯器優化. 當你在實時解釋器中輸入兩行的時候, 他們會單獨編譯, 因此也會單獨進行優化. 如果你在 `.py` 文件中嘗試這個例子, 則不會看到相同的行為, 因為文件是一次性編譯的.
+* 當 a 和 b 在同一行中被設置為 `257` 時，Python 解釋器會創建一個新對象，然後同時引用第二個變量. 如果你在不同的行上進行，它就不會 "知道" 已經存在一個 `257` 對象了.
+* 這是一種特別為交互式環境做的編譯器優化. 當你在實時解釋器中輸入兩行的時候，他們會單獨編譯，因此也會單獨進行優化. 如果你在 `.py` 文件中嘗試這個例子，則不會看到相同的行為，因為文件是一次性編譯的.
 
 ---
 
@@ -536,11 +536,11 @@ board = [row]*3
 
 #### 💡 說明:
 
-當我們初始化 `row` 變量時, 下面這張圖展示了內存中的情況。
+當我們初始化 `row` 變量時，下面這張圖展示了內存中的情況。
 
 ![image](/images/tic-tac-toe/after_row_initialized.png)
 
-而當通過對 `row` 做乘法來初始化 `board` 時, 內存中的情況則如下圖所示 (每個元素 `board[0]`, `board[1]` 和 `board[2]` 都和 `row` 一樣引用了同一列表.)
+而當通過對 `row` 做乘法來初始化 `board` 時，內存中的情況則如下圖所示 (每個元素 `board[0]`, `board[1]` 和 `board[2]` 都和 `row` 一樣引用了同一列表.)
 
 ![image](/images/tic-tac-toe/after_board_initialized.png)
 
@@ -577,7 +577,7 @@ funcs_results = [func() for func in funcs]
 [6, 6, 6, 6, 6, 6, 6]
 ```
 
-即使每次在叠代中將 `some_func` 加入 `funcs` 前的 `x` 值都不相同, 所有的函數還是都返回6.
+即使每次在叠代中將 `some_func` 加入 `funcs` 前的 `x` 值都不相同，所有的函數還是都返回6.
 
 // 再換個例子
 
@@ -589,7 +589,7 @@ funcs_results = [func() for func in funcs]
 
 #### 💡 說明:
 
-- 當在循環內部定義一個函數時, 如果該函數在其主體中使用了循環變量, 則閉包函數將與循環變量綁定, 而不是它的值. 因此, 所有的函數都是使用最後分配給變量的值來進行計算的.
+- 當在循環內部定義一個函數時，如果該函數在其主體中使用了循環變量，則閉包函數將與循環變量綁定，而不是它的值. 因此，所有的函數都是使用最後分配給變量的值來進行計算的.
 
 - 可以通過將循環變量作為命名變量傳遞給函數來獲得預期的結果. **為什麽這樣可行?** 因為這會在函數內再次定義一個局部變量.
 
@@ -621,8 +621,8 @@ False
 
 #### 💡 說明:
 
-- `is not` 是個單獨的二元運算符, 與分別使用 `is` 和 `not` 不同.
--  如果操作符兩側的變量指向同一個對象, 則 `is not` 的結果為 `False`, 否則結果為 `True`.
+- `is not` 是個單獨的二元運算符，與分別使用 `is` 和 `not` 不同.
+-  如果操作符兩側的變量指向同一個對象，則 `is not` 的結果為 `False`，否則結果為 `True`.
 
 ---
 
@@ -650,8 +650,8 @@ SyntaxError: invalid syntax
 
 #### 💡 說明:
 
-- 在Python函數的形式參數列表中, 尾隨逗號並不一定是合法的.
-- 在Python中, 參數列表部分用前置逗號定義, 部分用尾隨逗號定義. 這種沖突導致逗號被夾在中間, 沒有規則定義它.(譯:這一句看得我也很懵逼,只能強翻了.詳細解釋看下面的討論帖會一目了然.)
+- 在Python函數的形式參數列表中，尾隨逗號並不一定是合法的.
+- 在Python中，參數列表部分用前置逗號定義，部分用尾隨逗號定義. 這種沖突導致逗號被夾在中間，沒有規則定義它.(譯:這一句看得我也很懵逼,只能強翻了.詳細解釋看下面的討論帖會一目了然.)
 - **註意:** 尾隨逗號的問題已經在Python 3.6中被[修覆](https://bugs.python.org/issue9232)了. 而這篇[帖子](https://bugs.python.org/issue9232#msg248399)中則簡要討論了Python中尾隨逗號的不同用法.
 ---
 
@@ -673,12 +673,12 @@ SyntaxError: EOL while scanning string literal
 
 #### 💡 說明:
 
-- 在以 `r` 開頭的原始字符串中, 反斜杠並沒有特殊含義.
+- 在以 `r` 開頭的原始字符串中，反斜杠並沒有特殊含義.
   ```py
   >>> print(repr(r"wt\"f"))
   'wt\\"f'
   ```
-- 解釋器所做的只是簡單的改變了反斜杠的行為, 因此會直接放行反斜杠及後一個的字符. 這就是反斜杠在原始字符串末尾不起作用的原因.
+- 解釋器所做的只是簡單的改變了反斜杠的行為，因此會直接放行反斜杠及後一個的字符. 這就是反斜杠在原始字符串末尾不起作用的原因.
 
 ---
 
@@ -702,10 +702,10 @@ SyntaxError: invalid syntax
 
 #### 💡 說明:
 
-* 運算符的優先級會影響表達式的求值順序, 而在 Python 中 `==` 運算符的優先級要高於 `not` 運算符.
-* 所以 `not x == y` 相當於 `not (x == y)`, 同時等價於 `not (True == False)`, 最後的運算結果就是 `True`.
-* 之所以 `x == not y` 會拋一個 `SyntaxError` 異常, 是因為它會被認為等價於 `(x == not) y`, 而不是你一開始期望的 `x == (not y)`.
-* 解釋器期望 `not` 標記是 `not in` 操作符的一部分 (因為 `==` 和 `not in` 操作符具有相同的優先級), 但是它在 `not` 標記後面找不到 `in` 標記, 所以會拋出 `SyntaxError` 異常.
+* 運算符的優先級會影響表達式的求值順序，而在 Python 中 `==` 運算符的優先級要高於 `not` 運算符.
+* 所以 `not x == y` 相當於 `not (x == y)`，同時等價於 `not (True == False)`，最後的運算結果就是 `True`.
+* 之所以 `x == not y` 會拋一個 `SyntaxError` 異常，是因為它會被認為等價於 `(x == not) y`，而不是你一開始期望的 `x == (not y)`.
+* 解釋器期望 `not` 標記是 `not in` 操作符的一部分 (因為 `==` 和 `not in` 操作符具有相同的優先級)，但是它在 `not` 標記後面找不到 `in` 標記，所以會拋出 `SyntaxError` 異常.
 
 ---
 
@@ -723,14 +723,14 @@ wtfpython
 ```
 
 #### 💡 說明:
-+ Python 提供隱式的[字符串鏈接](https://docs.python.org/2/reference/lexical_analysis.html#string-literal-concatenation), 例如,
++ Python 提供隱式的[字符串鏈接](https://docs.python.org/2/reference/lexical_analysis.html#string-literal-concatenation)，例如,
   ```
   >>> print("wtf" "python")
   wtfpython
   >>> print("wtf" "") # or "wtf"""
   wtf
   ```
-+ `'''` 和 `"""` 在 Python中也是字符串定界符, Python 解釋器在先遇到三個引號的的時候會嘗試再尋找三個終止引號作為定界符, 如果不存在則會導致 `SyntaxError` 異常.
++ `'''` 和 `"""` 在 Python中也是字符串定界符，Python 解釋器在先遇到三個引號的的時候會嘗試再尋找三個終止引號作為定界符，如果不存在則會導致 `SyntaxError` 異常.
 
 ---
 
@@ -761,7 +761,7 @@ midnight_time 並沒有被輸出.
 
 #### 💡 說明:
 
-在Python 3.5之前, 如果 `datetime.time` 對象存儲的UTC的午夜時間(譯: 就是 `00:00`), 那麽它的布爾值會被認為是 `False`. 當使用 `if obj:` 語句來檢查 `obj` 是否為 `null` 或者某些“空”值的時候, 很容易出錯.
+在Python 3.5之前，如果 `datetime.time` 對象存儲的UTC的午夜時間(譯: 就是 `00:00`)，那麽它的布爾值會被認為是 `False`. 當使用 `if obj:` 語句來檢查 `obj` 是否為 `null` 或者某些“空”值的時候，很容易出錯.
 
 ---
 
@@ -769,7 +769,7 @@ midnight_time 並沒有被輸出.
 
 1\.
 ```py
-# 一個簡單的例子, 統計下面可叠代對象中的布爾型值的個數和整型值的個數
+# 一個簡單的例子，統計下面可叠代對象中的布爾型值的個數和整型值的個數
 mixed_list = [False, 1.0, "some_string", 3, True, [], False]
 integers_found_so_far = 0
 booleans_found_so_far = 0
@@ -823,13 +823,13 @@ another_dict[1.0] = "Python"
   True
   ```
 
-* 所以 `True` 的整數值是 `1`, 而 `False` 的整數值是 `0`.
+* 所以 `True` 的整數值是 `1`，而 `False` 的整數值是 `0`.
   ```py
   >>> True == 1 == 1.0 and False == 0 == 0.0
   True
   ```
 
-* 關於其背後的原理, 請看這個 StackOverflow 的[回答](https://stackoverflow.com/a/8169049/4354153).
+* 關於其背後的原理，請看這個 StackOverflow 的[回答](https://stackoverflow.com/a/8169049/4354153).
 
 ---
 
@@ -899,7 +899,7 @@ True
 #### 💡 說明:
 
 * 類變量和實例變量在內部是通過類對象的字典來處理(譯: 就是 `__dict__` 屬性). 如果在當前類的字典中找不到的話就去它的父類中尋找.
-* `+=` 運算符會在原地修改可變對象, 而不是創建新對象. 因此, 在這種情況下, 修改一個實例的屬性會影響其他實例和類屬性.
+* `+=` 運算符會在原地修改可變對象，而不是創建新對象. 因此，在這種情況下，修改一個實例的屬性會影響其他實例和類屬性.
 
 ---
 
@@ -961,9 +961,9 @@ TypeError: 'tuple' object does not support item assignment
     > 不可變序列
         不可變序列的對象一旦創建就不能再改變. (如果對象包含對其他對象的引用，則這些其他對象可能是可變的並且可能會被修改; 但是，由不可變對象直接引用的對象集合不能更改.)
 
-* `+=` 操作符在原地修改了列表. 元素賦值操作並不工作, 但是當異常拋出時, 元素已經在原地被修改了.
+* `+=` 操作符在原地修改了列表. 元素賦值操作並不工作，但是當異常拋出時，元素已經在原地被修改了.
 
-(譯: 對於不可變對象, 這裏指tuple, `+=` 並不是原子操作, 而是 `extend` 和 `=` 兩個動作, 這裏 `=` 操作雖然會拋出異常, 但 `extend` 操作已經修改成功了. 詳細解釋可以看[這裏](https://segmentfault.com/a/1190000010767068))
+(譯: 對於不可變對象，這裏指tuple，`+=` 並不是原子操作，而是 `extend` 和 `=` 兩個動作，這裏 `=` 操作雖然會拋出異常，但 `extend` 操作已經修改成功了. 詳細解釋可以看[這裏](https://segmentfault.com/a/1190000010767068))
 
 ---
 
@@ -993,7 +993,7 @@ NameError: name 'e' is not defined
 
 * 出處: https://docs.python.org/3/reference/compound_stmts.html#except
 
-  當使用 `as` 為目標分配異常的時候, 將在except子句的末尾清除該異常.
+  當使用 `as` 為目標分配異常的時候，將在except子句的末尾清除該異常.
 
   這就好像
 
@@ -1012,9 +1012,9 @@ NameError: name 'e' is not defined
           del N
   ```
 
-  這意味著異常必須在被賦值給其他變量才能在 `except` 子句之後引用它. 而異常之所以會被清除, 則是由於上面附加的回溯信息(trackback)會和棧幀(stack frame)形成循環引用, 使得該棧幀中的所有本地變量在下一次垃圾回收發生之前都處於活動狀態.(譯: 也就是說不會被回收)
+  這意味著異常必須在被賦值給其他變量才能在 `except` 子句之後引用它. 而異常之所以會被清除，則是由於上面附加的回溯信息(trackback)會和棧幀(stack frame)形成循環引用，使得該棧幀中的所有本地變量在下一次垃圾回收發生之前都處於活動狀態.(譯: 也就是說不會被回收)
 
-* 子句在 Python 中並沒有獨立的作用域. 示例中的所有內容都處於同一作用域內, 所以變量 `e` 會由於執行了 `except` 子句而被刪除. 而對於有獨立的內部作用域的函數來說情況就不一樣了. 下面的例子說明了這一點:
+* 子句在 Python 中並沒有獨立的作用域. 示例中的所有內容都處於同一作用域內，所以變量 `e` 會由於執行了 `except` 子句而被刪除. 而對於有獨立的內部作用域的函數來說情況就不一樣了. 下面的例子說明了這一點:
 
      ```py
      def f(x):
@@ -1037,7 +1037,7 @@ NameError: name 'e' is not defined
      [5, 4, 3]
      ```
 
-* 在 Python 2.x 中, `Exception()` 實例被賦值給了變量 `e`, 所以當你嘗試打印結果的時候, 它的輸出為空.（譯: 正常的Exception實例打印出來就是空）
+* 在 Python 2.x 中，`Exception()` 實例被賦值給了變量 `e`，所以當你嘗試打印結果的時候，它的輸出為空.（譯: 正常的Exception實例打印出來就是空）
 
     **Output (Python 2.x):**
     ```py
@@ -1064,8 +1064,8 @@ I've lost faith in truth!
 
 #### 💡 說明:
 
-- 最初, Python 並沒有 `bool` 型 (人們用0表示假值, 用非零值比如1作為真值). 後來他們添加了 `True`, `False`, 和 `bool` 型, 但是, 為了向後兼容, 他們沒法把 `True` 和 `False` 設置為常量, 只是設置成了內置變量.
-- Python 3 由於不再需要向後兼容, 終於可以修覆這個問題了, 所以這個例子無法在 Python 3.x 中執行!
+- 最初，Python 並沒有 `bool` 型 (人們用0表示假值，用非零值比如1作為真值). 後來他們添加了 `True`, `False` 和 `bool` 型，但是為了向後兼容，他們沒法把 `True` 和 `False` 設置為常量，只是設置成了內置變量.
+- Python 3 由於不再需要向後兼容，終於可以修覆這個問題了，所以這個例子無法在 Python 3.x 中執行!
 
 ---
 
