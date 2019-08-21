@@ -45,7 +45,7 @@ PS: 如果你不是第一次讀了，你可以在[這裡](https://github.com/sat
         - [> not knot!/別糾結！](#-not-knot別糾結)
         - [> Half triple-quoted strings/三個引號](#-half-triple-quoted-strings三個引號)
         - [> Midnight time doesn't exist?/不存在的午夜？](#-midnight-time-doesnt-exist不存在的午夜)
-        - [> What's wrong with booleans?/布爾你咋了？](#-whats-wrong-with-booleans布爾你咋了)
+        - [> What's wrong with booleans?/布林你咋了？](#-whats-wrong-with-booleans布林你咋了)
         - [> Class attributes and instance attributes/類屬性和實例屬性](#-class-attributes-and-instance-attributes類屬性和實例屬性)
         - [> yielding None/生成 None](#-yielding-none生成-none)
         - [> Mutating the immutable!/強人所難](#-mutating-the-immutable強人所難)
@@ -761,15 +761,15 @@ midnight_time 並沒有被輸出.
 
 #### 💡 說明:
 
-在Python 3.5之前，如果 `datetime.time` 對象存儲的UTC的午夜時間(譯: 就是 `00:00`)，那麽它的布爾值會被認為是 `False`. 當使用 `if obj:` 語句來檢查 `obj` 是否為 `null` 或者某些“空”值的時候，很容易出錯.
+在Python 3.5之前，如果 `datetime.time` 對象存儲的UTC的午夜時間(譯: 就是 `00:00`)，那麽它的布林值會被認為是 `False`. 當使用 `if obj:` 語句來檢查 `obj` 是否為 `null` 或者某些“空”值的時候，很容易出錯.
 
 ---
 
-### > What's wrong with booleans?/布爾你咋了?
+### > What's wrong with booleans?/布林你咋了?
 
 1\.
 ```py
-# 一個簡單的例子，統計下面可叠代對象中的布爾型值的個數和整型值的個數
+# 一個簡單的例子，統計下面可叠代對象中的布林型值的個數和整型值的個數
 mixed_list = [False, 1.0, "some_string", 3, True, [], False]
 integers_found_so_far = 0
 booleans_found_so_far = 0
@@ -815,7 +815,7 @@ another_dict[1.0] = "Python"
 
 #### 💡 說明:
 
-* 布爾值是 `int` 的子類
+* 布林值是 `int` 的子類
   ```py
   >>> isinstance(True, int)
   True
