@@ -31,21 +31,21 @@ PS: 如果你不是第一次讀了，你可以在[這裡](https://github.com/sat
 - [👀 Examples/示例](#-examples示例)
     - [Section: Strain your brain!/大腦運動!](#section-strain-your-brain大腦運動)
         - [> Strings can be tricky sometimes/微妙的字符串 *](#-strings-can-be-tricky-sometimes微妙的字符串-)
-        - [> Time for some hash brownies!/是時候來點蛋糕了!](#-time-for-some-hash-brownies是時候來點蛋糕了)
+        - [> Time for some hash brownies!/是時候來點蛋糕了！](#-time-for-some-hash-brownies是時候來點蛋糕了)
         - [> Return return everywhere!/到處返回！](#-return-return-everywhere到處返回)
-        - [> Deep down, we're all the same./本質上,我們都一樣. *](#-deep-down-were-all-the-same本質上我們都一樣-)
+        - [> Deep down, we're all the same./本質上，我們都一樣。 *](#-deep-down-were-all-the-same本質上我們都一樣-)
         - [> For what?/為什麽?](#-for-what為什麽)
         - [> Evaluation time discrepancy/執行時機差異](#-evaluation-time-discrepancy執行時機差異)
-        - [> `is` is not what it is!/出人意料的`is`!](#-is-is-not-what-it-is出人意料的is)
-        - [> A tic-tac-toe where X wins in the first attempt!/一蹴即至!](#-a-tic-tac-toe-where-x-wins-in-the-first-attempt一蹴即至)
+        - [> `is` is not what it is!/出人意料的`is`！](#-is-is-not-what-it-is出人意料的is)
+        - [> A tic-tac-toe where X wins in the first attempt!/一蹴即至！](#-a-tic-tac-toe-where-x-wins-in-the-first-attempt一蹴即至)
         - [> The sticky output function/麻煩的輸出](#-the-sticky-output-function麻煩的輸出)
         - [> `is not ...` is not `is (not ...)`/`is not ...` 不是 `is (not ...)`](#-is-not--is-not-is-not-is-not--不是-is-not-)
         - [> The surprising comma/意外的逗號](#-the-surprising-comma意外的逗號)
         - [> Backslashes at the end of string/字符串末尾的反斜杠](#-backslashes-at-the-end-of-string字符串末尾的反斜杠)
-        - [> not knot!/別糾結!](#-not-knot別糾結)
+        - [> not knot!/別糾結！](#-not-knot別糾結)
         - [> Half triple-quoted strings/三個引號](#-half-triple-quoted-strings三個引號)
-        - [> Midnight time doesn't exist?/不存在的午夜?](#-midnight-time-doesnt-exist不存在的午夜)
-        - [> What's wrong with booleans?/布爾你咋了?](#-whats-wrong-with-booleans布爾你咋了)
+        - [> Midnight time doesn't exist?/不存在的午夜？](#-midnight-time-doesnt-exist不存在的午夜)
+        - [> What's wrong with booleans?/布爾你咋了？](#-whats-wrong-with-booleans布爾你咋了)
         - [> Class attributes and instance attributes/類屬性和實例屬性](#-class-attributes-and-instance-attributes類屬性和實例屬性)
         - [> yielding None/生成 None](#-yielding-none生成-none)
         - [> Mutating the immutable!/強人所難](#-mutating-the-immutable強人所難)
@@ -54,43 +54,43 @@ PS: 如果你不是第一次讀了，你可以在[這裡](https://github.com/sat
         - [> From filled to None in one instruction.../從有到無...](#-from-filled-to-none-in-one-instruction從有到無)
         - [> Subclass relationships/子類關系 *](#-subclass-relationships子類關系-)
         - [> The mysterious key type conversion/神秘的鍵型轉換 *](#-the-mysterious-key-type-conversion神秘的鍵型轉換-)
-        - [> Let's see if you can guess this?/看看你能否猜到這一點?](#-lets-see-if-you-can-guess-this看看你能否猜到這一點)
-    - [Section: Appearances are deceptive!/外表是靠不住的!](#section-appearances-are-deceptive外表是靠不住的)
-        - [> Skipping lines?/跳過一行?](#-skipping-lines跳過一行)
+        - [> Let's see if you can guess this?/看看你能否猜到這一點？](#-lets-see-if-you-can-guess-this看看你能否猜到這一點)
+    - [Section: Appearances are deceptive!/外表是靠不住的！](#section-appearances-are-deceptive外表是靠不住的)
+        - [> Skipping lines?/跳過一行？](#-skipping-lines跳過一行)
         - [> Teleportation/空間移動 *](#-teleportation空間移動-)
         - [> Well, something is fishy.../嗯，有些可疑...](#-well-something-is-fishy嗯有些可疑)
-    - [Section: Watch out for the landmines!/小心地雷!](#section-watch-out-for-the-landmines小心地雷)
+    - [Section: Watch out for the landmines!/小心地雷！](#section-watch-out-for-the-landmines小心地雷)
         - [> Modifying a dictionary while iterating over it/叠代字典時的修改](#-modifying-a-dictionary-while-iterating-over-it叠代字典時的修改)
         - [> Stubborn `del` operator/堅強的 `del` *](#-stubborn-del-operator堅強的-del-)
         - [> Deleting a list item while iterating/叠代列表時刪除元素](#-deleting-a-list-item-while-iterating叠代列表時刪除元素)
-        - [> Loop variables leaking out!/循環變量泄漏!](#-loop-variables-leaking-out循環變量泄漏)
-        - [> Beware of default mutable arguments!/當心默認的可變參數!](#-beware-of-default-mutable-arguments當心默認的可變參數)
+        - [> Loop variables leaking out!/循環變量泄漏！](#-loop-variables-leaking-out循環變量泄漏)
+        - [> Beware of default mutable arguments!/當心默認的可變參數！](#-beware-of-default-mutable-arguments當心默認的可變參數)
         - [> Catching the Exceptions/捕獲異常](#-catching-the-exceptions捕獲異常)
-        - [> Same operands, different story!/同人不同命!](#-same-operands-different-story同人不同命)
+        - [> Same operands, different story!/同人不同命！](#-same-operands-different-story同人不同命)
         - [> The out of scope variable/外部作用域變量](#-the-out-of-scope-variable外部作用域變量)
         - [> Be careful with chained operations/小心鏈式操作](#-be-careful-with-chained-operations小心鏈式操作)
         - [> Name resolution ignoring class scope/忽略類作用域的名稱解析](#-name-resolution-ignoring-class-scope忽略類作用域的名稱解析)
         - [> Needle in a Haystack/大海撈針](#-needle-in-a-haystack大海撈針)
-    - [Section: The Hidden treasures!/隱藏的寶藏!](#section-the-hidden-treasures隱藏的寶藏)
-        - [> Okay Python, Can you make me fly?/Python，可否帶我飛? *](#-okay-python-can-you-make-me-flypython-可否帶我飛-)
-        - [> `goto`, but why?/`goto`，但為什麽? *](#-goto-but-whygoto-但為什麽-)
+    - [Section: The Hidden treasures!/隱藏的寶藏！](#section-the-hidden-treasures隱藏的寶藏)
+        - [> Okay Python, Can you make me fly?/Python，可否帶我飛？ *](#-okay-python-can-you-make-me-flypython-可否帶我飛-)
+        - [> `goto`, but why?/`goto`，但為什麽？ *](#-goto-but-whygoto-但為什麽-)
         - [> Brace yourself!/做好思想準備 *](#-brace-yourself做好思想準備-)
         - [> Let's meet Friendly Language Uncle For Life/讓生活更友好 *](#-lets-meet-friendly-language-uncle-for-life讓生活更友好-)
-        - [> Even Python understands that love is complicated/連Python也知道愛是難言的 *](#-even-python-understands-that-love-is-complicated連Python也知道愛是難言的-)
-        - [> Yes, it exists!/是的，它存在!](#-yes-it-exists是的-它存在)
+        - [> Even Python understands that love is complicated/連 Python 也知道愛是難言的 *](#-even-python-understands-that-love-is-complicated連Python也知道愛是難言的-)
+        - [> Yes, it exists!/是的，它存在！](#-yes-it-exists是的-它存在)
         - [> Inpinity/無限 *](#-inpinity無限-)
-        - [> Mangling time!修飾時間! *](#-mangling-time修飾時間-)
+        - [> Mangling time!修飾時間！ *](#-mangling-time修飾時間-)
     - [Section: Miscellaneous/雜項](#section-miscellaneous雜項)
         - [> `+=` is faster/更快的 `+=` ](#--is-faster更快的-)
-        - [> Let's make a giant string!/來做個巨大的字符串吧!](#-lets-make-a-giant-string來做個巨大的字符串吧)
+        - [> Let's make a giant string!/來做個巨大的字符串吧！](#-lets-make-a-giant-string來做個巨大的字符串吧)
         - [> Explicit typecast of strings/字符串的顯式類型轉換](#-explicit-typecast-of-strings字符串的顯式類型轉換)
         - [> Minor Ones/小知識點](#-minor-ones小知識點)
 - [Contributing/貢獻](#contributing貢獻)
 - [Acknowledgements/致謝](#acknowledgements致謝)
 - [🎓 License/許可](#-license許可)
     - [Help/幫助](#help幫助)
-    - [Surprise your geeky pythonist friends?/想給你的極客朋友一個驚喜?](#surprise-your-geeky-pythonist-friends想給你的極客朋友一個驚喜)
-    - [Need a pdf version?/需要來一份pdf版的?](#need-a-pdf-version需要來一份pdf版的)
+    - [Surprise your geeky pythonist friends?/想給你的極客朋友一個驚喜？](#surprise-your-geeky-pythonist-friends想給你的極客朋友一個驚喜)
+    - [Need a pdf version?/需要來一份 pdf 版的？](#need-a-pdf-version需要來一份pdf版的)
     - [Follow Commit/追蹤Commit](#follow-commit追蹤Commit)
     - [996.icu](#996icu)
 
@@ -101,11 +101,11 @@ PS: 如果你不是第一次讀了，你可以在[這裡](https://github.com/sat
 所有示例的結構都如下所示:
 
 > ### > 一個精選的標題 *
-> 標題末尾的星號表示該示例在第一版中不存在，是最近添加的.
+> 標題末尾的星號表示該示例在第一版中不存在，是最近添加的。
 >
 > ```py
-> # 準備代碼.
-> # 釋放魔法...
+> # 準備代碼
+> # 釋放魔法
 > ```
 >
 > **Output (Python version):**
@@ -113,12 +113,12 @@ PS: 如果你不是第一次讀了，你可以在[這裡](https://github.com/sat
 > >>> 觸發語句
 > 出乎意料的輸出結果
 > ```
-> (可選): 對意外輸出結果的簡短描述.
+> (可選): 對意外輸出結果的簡短描述。
 >
 >
 > #### 💡 說明:
 >
-> * 簡要說明發生了什麽以及為什麽會發生.
+> * 簡要說明發生了什麽以及為什麽會發生。
 >   ```py
 >   如有必要，舉例說明
 >   ```
@@ -128,19 +128,19 @@ PS: 如果你不是第一次讀了，你可以在[這裡](https://github.com/sat
 >   # 一些正常的輸入
 >   ```
 
-**註意:** 所有的示例都在 Python 3.5.2 版本的交互解釋器上測試過，如果不特別說明應該適用於所有 Python 版本.
+**註意:** 所有的示例都在 Python 3.5.2 版本的交互解釋器上測試過，如果不特別說明應該適用於所有 Python 版本。
 
 # Usage/用法
 
 我個人建議，最好依次閱讀下面的示例，並對每個示例:
-- 仔細閱讀設置例子最開始的代碼.  如果您是一位經驗豐富的 Python 程序員，那麽大多數時候您都能成功預期到後面的結果.
+- 仔細閱讀設置例子最開始的代碼。  如果您是一位經驗豐富的 Python 程序員，那麽大多數時候您都能成功預期到後面的結果。
 - 閱讀輸出結果,
-  + 確認結果是否如你所料.
-  + 確認你是否知道這背後的原理.
-    - 如果不知道，深呼吸然後閱讀說明 (如果你還是看不明白，別沈默! 可以在[這](https://github.com/satwikkansal/wtfPython)提個 issue).
-    - 如果知道，給自己點獎勵，然後去看下一個例子.
+  + 確認結果是否如你所料。
+  + 確認你是否知道這背後的原理。
+    - 如果不知道，深呼吸然後閱讀說明 (如果你還是看不明白，別沈默! 可以在[這](https://github.com/satwikkansal/wtfPython)提個 issue)。
+    - 如果知道，給自己點獎勵，然後去看下一個例子。
 
-PS: 你也可以在命令行閱讀 WTFpython. 我們有 pypi 包 和 npm 包(支持代碼高亮).(譯: 這兩個都是英文版的)
+PS: 你也可以在命令行閱讀 WTFpython。 我們有 pypi 包 和 npm 包(支持代碼高亮)。 (譯: 這兩個都是英文版的)
 
 安裝 npm 包 [`wtfpython`](https://www.npmjs.com/package/wtfpython)
 ```sh
@@ -152,7 +152,7 @@ $ npm install -g wtfpython
 $ pip install wtfpython -U
 ```
 
-現在，在命令行中運行 `wtfpython`，你就可以開始瀏覽了.
+現在，在命令行中運行 `wtfpython`，你就可以開始瀏覽了。
 
 ---
 
@@ -168,7 +168,7 @@ $ pip install wtfpython -U
 >>> a = "some_string"
 >>> id(a)
 140420665652016
->>> id("some" + "_" + "string") # 註意兩個的id值是相同的.
+>>> id("some" + "_" + "string") # 註意兩個的id值是相同的。
 140420665652016
 ```
 
