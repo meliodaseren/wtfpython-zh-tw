@@ -202,16 +202,16 @@ False
 
 - 發生駐留之後，許多變量可能指向記憶體中的相同字符串對象，從而節省記憶體。
 
-- 在上面的代碼中，字符串是隱式駐留的。何時發生隱式駐留則取決於具體的實現。這裏有一些方法可以用來猜測字符串是否會被駐留：
+- 在上面的代碼中，字符串是隱式駐留的。何時發生隱式駐留則取決於具體的實現。這裡有一些方法可以用來猜測字符串是否會被駐留：
   - 所有長度為 0 和長度為 1 的字符串都被駐留。
   - 字符串在編譯時被實現 (`'wtf'` 將被駐留，但是 `''.join(['w', 't', 'f'])` 將不會被駐留)
-  - 字符串中只包含字母，數字或下劃線時將會駐留。所以 `'wtf!'` 由於包含 `!` 而未被駐留。可以在[這裏](https://github.com/python/cpython/blob/3.6/Objects/codeobject.c#L19)找到 CPython 對此規則的實現。
+  - 字符串中只包含字母，數字或下劃線時將會駐留。所以 `'wtf!'` 由於包含 `!` 而未被駐留。可以在[這裡](https://github.com/python/cpython/blob/3.6/Objects/codeobject.c#L19)找到 CPython 對此規則的實現。
 
     <img src="/images/string-intern/string_intern.png" alt="">
 
-- 當在同一行將 `a` 和 `b` 的值設置為 `"wtf!"` 的時候，Python 解釋器會創建一個新對象，然後同時引用第二個變量 (譯：僅適用於3.7以下，詳細情況請看[這裏](https://github.com/leisurelicht/wtfpython-cn/issues/13))。如果你在不同的行上進行賦值操作，它就不會 “知道” 已經有一個 `wtf！` 對象 (因為 `"wtf!"` 不是按照上面提到的方式被隱式駐留的)。它是一種編譯器優化，特別適用於交互式環境。
+- 當在同一行將 `a` 和 `b` 的值設置為 `"wtf!"` 的時候，Python 解釋器會創建一個新對象，然後同時引用第二個變量 (譯：僅適用於3.7以下，詳細情況請看[這裡](https://github.com/leisurelicht/wtfpython-cn/issues/13))。如果你在不同的行上進行賦值操作，它就不會 “知道” 已經有一個 `wtf！` 對象 (因為 `"wtf!"` 不是按照上面提到的方式被隱式駐留的)。它是一種編譯器優化，特別適用於交互式環境。
 
-- 常量折疊(constant folding) 是 Python 中的一種 [窺孔優化(peephole optimization)](https://en.wikipedia.org/wiki/Peephole_optimization) 技術。這意味著在編譯時表達式 `'a'*20` 會被替換為 `'aaaaaaaaaaaaaaaaaaaa'` 以減少運行時的時鐘周期。只有長度小於 20 的字符串才會發生常量折疊。 (為什麼？想像一下由於表達式 `'a'*10**10` 而生成的 `.pyc` 文件的大小)。相關的源碼實現在[這裏](https://github.com/python/cpython/blob/3.6/Python/peephole.c#L288)。
+- 常量折疊(constant folding) 是 Python 中的一種 [窺孔優化(peephole optimization)](https://en.wikipedia.org/wiki/Peephole_optimization) 技術。這意味著在編譯時表達式 `'a'*20` 會被替換為 `'aaaaaaaaaaaaaaaaaaaa'` 以減少運行時的時鐘周期。只有長度小於 20 的字符串才會發生常量折疊。 (為什麼？想像一下由於表達式 `'a'*10**10` 而生成的 `.pyc` 文件的大小)。相關的源碼實現在[這裡](https://github.com/python/cpython/blob/3.6/Python/peephole.c#L288)。
 
 ---
 
@@ -372,7 +372,7 @@ for i, some_dict[i] in enumerate(some_string):
   
 **💡 說明:**
   
-- 由於循環在Python中工作方式，賦值語句 `i = 10` 並不會影響叠代循環，在每次叠代開始之前，叠代器(這裏指 `range(4)`) 生成的下一個元素就被解包並賦值給目標列表的變量(這裏指 `i`)了。
+- 由於循環在Python中工作方式，賦值語句 `i = 10` 並不會影響叠代循環，在每次叠代開始之前，叠代器(這裡指 `range(4)`) 生成的下一個元素就被解包並賦值給目標列表的變量(這裡指 `i`)了。
   
 * 在每一次的叠代中，`enumerate(some_string)` 函數就生成一個新值 `i` (計數器增加) 並從 `some_string` 中獲取一個字符。然後將字典 `some_dict` 鍵 `i` (剛剛分配的) 的值設為該字符。本例中循環的展開可以簡化為：
   ```py
@@ -490,7 +490,7 @@ True
 140084850247344
 ```
 
-這裏解釋器並沒有智能到能在執行 `y = 257` 時意識到我們已經創建了一個整數 `257`，所以它在記憶體中又新建了另一個對象。
+這裡解釋器並沒有智能到能在執行 `y = 257` 時意識到我們已經創建了一個整數 `257`，所以它在記憶體中又新建了另一個對象。
 
 **當 `a` 和 `b` 在同一行中使用相同的值初始化時，會指向同一個對象。**
 
@@ -567,7 +567,7 @@ for x in range(7):
     def some_func():
         return x
     funcs.append(some_func)
-    results.append(some_func()) # 註意這裏函數被執行了
+    results.append(some_func()) # 註意這裡函數被執行了
 
 funcs_results = [func() for func in funcs]
 ```
@@ -930,7 +930,7 @@ def some_func(val):
 ```
 
 #### 💡 說明:
-- 來源和解釋可以在這裏找到: https://stackoverflow.com/questions/32139885/yield-in-list-comprehensions-and-generator-expressions
+- 來源和解釋可以在這裡找到: https://stackoverflow.com/questions/32139885/yield-in-list-comprehensions-and-generator-expressions
 - 相關錯誤報告: http://bugs.python.org/issue10544
 
 ---
@@ -946,7 +946,7 @@ another_tuple = ([1, 2], [3, 4], [5, 6])
 ```py
 >>> some_tuple[2] = "change this"
 TypeError: 'tuple' object does not support item assignment
->>> another_tuple[2].append(1000) # 這裏不出現錯誤
+>>> another_tuple[2].append(1000) # 這裡不出現錯誤
 >>> another_tuple
 ([1, 2], [3, 4], [5, 6, 1000])
 >>> another_tuple[2] += [99, 999]
@@ -966,7 +966,7 @@ TypeError: 'tuple' object does not support item assignment
 
 * `+=` 操作符在原地修改了列表. 元素賦值操作並不工作，但是當異常拋出時，元素已經在原地被修改了.
 
-(譯: 對於不可變對象，這裏指tuple，`+=` 並不是原子操作，而是 `extend` 和 `=` 兩個動作，這裏 `=` 操作雖然會拋出異常，但 `extend` 操作已經修改成功了. 詳細解釋可以看[這裏](https://segmentfault.com/a/1190000010767068))
+(譯: 對於不可變對象，這裡指tuple，`+=` 並不是原子操作，而是 `extend` 和 `=` 兩個動作，這裡 `=` 操作雖然會拋出異常，但 `extend` 操作已經修改成功了. 詳細解釋可以看[這裡](https://segmentfault.com/a/1190000010767068))
 
 ---
 
@@ -1096,7 +1096,7 @@ None
 
 #### 💡 說明:
 
-大多數修改序列/映射對象的方法, 比如 `list.append`, `dict.update`, `list.sort` 等等. 都是原地修改對象並返回 `None`. 這樣做的理由是, 如果操作可以原地完成, 就可以避免創建對象的副本來提高性能. (參考[這裏](http://docs.python.org/2/faq/design.html#why-doesn-t-list-sort-return-the-sorted-list))
+大多數修改序列/映射對象的方法, 比如 `list.append`, `dict.update`, `list.sort` 等等. 都是原地修改對象並返回 `None`. 這樣做的理由是, 如果操作可以原地完成, 就可以避免創建對象的副本來提高性能. (參考[這裡](http://docs.python.org/2/faq/design.html#why-doesn-t-list-sort-return-the-sorted-list))
 
 ---
 
@@ -1120,7 +1120,7 @@ False
 * Python 中的子類關系並不一定是傳遞的. 任何人都可以在元類中隨意定義 `__subclasscheck__`.
 * 當 `issubclass(cls, Hashable)` 被調用時, 它只是在 `cls` 中尋找 `__hash__` 方法或者從繼承的父類中尋找 `__hash__` 方法.
 * 由於 `object` is 可散列的(hashable), 但是 `list` 是不可散列的, 所以它打破了這種傳遞關系.
-* 在[這裏](https://www.naftaliharris.com/blog/python-subclass-intransitivity/)可以找到更詳細的解釋.
+* 在[這裡](https://www.naftaliharris.com/blog/python-subclass-intransitivity/)可以找到更詳細的解釋.
 
 ---
 
@@ -1207,7 +1207,7 @@ a, b = a[b] = {}, 5
 
 * `a` 被賦值的 `{}` 是可變對象.
 
-* 第二個目標列表是 `a[b]` (你可能覺得這裏會報錯, 因為在之前的語句中 `a` 和 `b` 都還沒有被定義. 但是別忘了, 我們剛剛將 `a` 賦值 `{}` 且將 `b` 賦值為 `5`).
+* 第二個目標列表是 `a[b]` (你可能覺得這裡會報錯, 因為在之前的語句中 `a` 和 `b` 都還沒有被定義. 但是別忘了, 我們剛剛將 `a` 賦值 `{}` 且將 `b` 賦值為 `5`).
 
 * 現在, 我們將通過將字典中鍵 `5` 的值設置為元組 `({}, 5)` 來創建循環引用 (輸出中的 `{...}` 指與 `a` 引用了相同的對象). 下面是一個更簡單的循環引用的例子
   ```py
@@ -1252,14 +1252,14 @@ a, b = a[b] = {}, 5
 
 什麽鬼?
 
-**註意:** 如果你想要重現的話最簡單的方法是直接覆制上面的代碼片段到你的文件或命令行裏.
+**註意:** 如果你想要重現的話最簡單的方法是直接覆制上面的代碼片段到你的文件或命令行裡.
 
 #### 💡 說明:
 
 一些非西方字符雖然看起來和英語字母相同, 但會被解釋器識別為不同的字母.
 
 ```py
->>> ord('е') # 西裏爾語的 'e' (Ye)
+>>> ord('е') # 西裡爾語的 'e' (Ye)
 1077
 >>> ord('e') # 拉丁語的 'e', 用於英文並使用標準鍵盤輸入
 101
@@ -1267,12 +1267,12 @@ a, b = a[b] = {}, 5
 False
 
 >>> value = 42 # 拉丁語 e
->>> valuе = 23 # 西裏爾語 'e', Python 2.x 的解釋器在這會拋出 `SyntaxError` 異常
+>>> valuе = 23 # 西裡爾語 'e', Python 2.x 的解釋器在這會拋出 `SyntaxError` 異常
 >>> value
 42
 ```
 
-內置的 `ord()` 函數可以返回一個字符的 Unicode [代碼點](https://en.wikipedia.org/wiki/Code_point), 這裏西裏爾語 'e' 和拉丁語 'e' 的代碼點不同證實了上述例子.
+內置的 `ord()` 函數可以返回一個字符的 Unicode [代碼點](https://en.wikipedia.org/wiki/Code_point), 這裡西裡爾語 'e' 和拉丁語 'e' 的代碼點不同證實了上述例子.
 
 ---
 
@@ -1336,7 +1336,7 @@ def square(x):
 * Python是這麽處理制表符的:
   
   > 首先, 制表符會從左到右依次被替換成8個空格, 直到被替換後的字符總數是八的倍數 <...>
-* 因此, `square` 函數最後一行的制表符會被替換成8個空格, 導致return語句進入循環語句裏面.
+* 因此, `square` 函數最後一行的制表符會被替換成8個空格, 導致return語句進入循環語句裡面.
 * Python 3 很友好, 在這種情況下會自動拋出錯誤.
 
     **Output (Python 3.x):**
@@ -1399,7 +1399,7 @@ class SomeClass:
 ```py
 >>> x = SomeClass()
 >>> y = x
->>> del x # 這裏應該會輸出 "Deleted!"
+>>> del x # 這裡應該會輸出 "Deleted!"
 >>> del y
 Deleted!
 ```
@@ -1413,7 +1413,7 @@ Deleted!
 >>> del x
 >>> y # 檢查一下y是否存在
 <__main__.SomeClass instance at 0x7f98a1a67fc8>
->>> del y # 像之前一樣, 這裏應該會輸出 "Deleted!"
+>>> del y # 像之前一樣, 這裡應該會輸出 "Deleted!"
 >>> globals() # 好吧, 並沒有. 讓我們看一下所有的全局變量
 Deleted!
 {'__builtins__': <module '__builtin__' (built-in)>, 'SomeClass': <class __main__.SomeClass at 0x7f98a1a5f668>, '__package__': None, '__name__': '__main__', '__doc__': None}
@@ -1426,7 +1426,7 @@ Deleted!
 + 每當遇到 `del x`, Python 會將 `x` 的引用數減1, 當 `x` 的引用數減到0時就會調用 `x.__del__()`.
 + 在第二個例子中, `y.__del__()` 之所以未被調用, 是因為前一條語句 (`>>> y`) 對同一對象創建了另一個引用, 從而防止在執行 `del y` 後對象的引用數變為0.
 + 調用 `globals` 導致引用被銷毀, 因此我們可以看到 "Deleted!" 終於被輸出了.
-+ (譯: 這其實是 Python 交互解釋器的特性, 它會自動讓 `_` 保存上一個表達式輸出的值, 詳細可以看[這裏](https://www.cnblogs.com/leisurelylicht/p/diao-pi-de-kong-zhi-tai.html).)
++ (譯: 這其實是 Python 交互解釋器的特性, 它會自動讓 `_` 保存上一個表達式輸出的值, 詳細可以看[這裡](https://www.cnblogs.com/leisurelylicht/p/diao-pi-de-kong-zhi-tai.html).)
 
 ---
 
@@ -1585,7 +1585,7 @@ def some_func(default_arg=[]):
 
     **Output:**
     ```py
-    >>> some_func.__defaults__ # 這裏會顯示函數的默認參數的值
+    >>> some_func.__defaults__ # 這裡會顯示函數的默認參數的值
     ([],)
     >>> some_func()
     >>> some_func.__defaults__
@@ -1615,13 +1615,13 @@ def some_func(default_arg=[]):
 ```py
 some_list = [1, 2, 3]
 try:
-    # 這裏會拋出異常 ``IndexError``
+    # 這裡會拋出異常 ``IndexError``
     print(some_list[4])
 except IndexError, ValueError:
     print("Caught!")
 
 try:
-    # 這裏會拋出異常 ``ValueError``
+    # 這裡會拋出異常 ``ValueError``
     some_list.remove(4)
 except IndexError, ValueError:
     print("Caught again!")
@@ -1648,7 +1648,7 @@ SyntaxError: invalid syntax
   ```py
   some_list = [1, 2, 3]
   try:
-     # 這裏會拋出異常 ``ValueError``
+     # 這裡會拋出異常 ``ValueError``
      some_list.remove(4)
   except (IndexError, ValueError), e:
      print("Caught again!")
@@ -1921,7 +1921,7 @@ import antigravity
 #### 💡 說明:
 + `antigravity` 模塊是 Python 開發人員發布的少數覆活節彩蛋之一.
 + `import antigravity` 會打開一個 Python 的[經典 XKCD 漫畫](http://xkcd.com/353/)頁面.
-+ 不止如此. 這個**覆活節彩蛋裏還有一個覆活節彩蛋**. 如果你看一下[代碼](https://github.com/python/cpython/blob/master/Lib/antigravity.py#L7-L17), 就會發現還有一個函數實現了 [XKCD's geohashing 算法](https://xkcd.com/426/).
++ 不止如此. 這個**覆活節彩蛋裡還有一個覆活節彩蛋**. 如果你看一下[代碼](https://github.com/python/cpython/blob/master/Lib/antigravity.py#L7-L17), 就會發現還有一個函數實現了 [XKCD's geohashing 算法](https://xkcd.com/426/).
 
 ---
 
@@ -1949,7 +1949,7 @@ Freedom!
 #### 💡 說明:
 - 2004年4月1日, Python [宣布](https://mail.python.org/pipermail/python-announce-list/2004-April/002982.html) 加入一個可用的 `goto` 作為愚人節禮物.
 - 當前版本的 Python 並沒有這個模塊.
-- 就算可以用, 也請不要使用它. 這裏是為什麽Python中沒有 `goto` 的[原因](https://docs.python.org/3/faq/design.html#why-is-there-no-goto).
+- 就算可以用, 也請不要使用它. 這裡是為什麽Python中沒有 `goto` 的[原因](https://docs.python.org/3/faq/design.html#why-is-there-no-goto).
 
 ---
 
@@ -1971,7 +1971,7 @@ SyntaxError: not a chance
 想用大括號? 沒門! 覺得不爽, 請去用java.
 
 #### 💡 說明:
-+ 通常 `__future__` 會提供 Python 未來版本的功能. 然而，這裏的 “未來” 是一個諷刺.
++ 通常 `__future__` 會提供 Python 未來版本的功能. 然而，這裡的 “未來” 是一個諷刺.
 + 這是一個表達社區對此類問題態度的覆活節彩蛋.
 
 ---
@@ -1981,7 +1981,7 @@ SyntaxError: not a chance
 **Output (Python 3.x)**
 ```py
 >>> from __future__ import barry_as_FLUFL
->>> "Ruby" != "Python" # 這裏沒什麽疑問
+>>> "Ruby" != "Python" # 這裡沒什麽疑問
   File "some_file.py", line 1
     "Ruby" != "Python"
               ^
@@ -1997,8 +1997,8 @@ True
 - 相關的 [PEP-401](https://www.python.org/dev/peps/pep-0401/) 發布於 2009年4月1日 (所以你現在知道這意味著什麽了吧).
 - 引用 PEP-401
   
-  > 意識到 Python 3.0 裏的 != 運算符是一個會引起手指疼痛的恐怖錯誤, FLUFL 將 <> 運算符恢覆為唯一寫法.
-- Uncle Barry 在 PEP 中還分享了其他東西; 你可以在[這裏](https://www.python.org/dev/peps/pep-0401/)獲得他們.
+  > 意識到 Python 3.0 裡的 != 運算符是一個會引起手指疼痛的恐怖錯誤, FLUFL 將 <> 運算符恢覆為唯一寫法.
+- Uncle Barry 在 PEP 中還分享了其他東西; 你可以在[這裡](https://www.python.org/dev/peps/pep-0401/)獲得他們.
 - (譯: 雖然文檔中沒寫，但應該是只能在交互解釋器中使用.)
 ---
 
@@ -2041,7 +2041,7 @@ In the face of ambiguity, refuse the temptation to guess.
 There should be one-- and preferably only one --obvious way to do it.
 而是盡量找一種，最好是唯一一種明顯的解決方案（如果不確定，就用窮舉法）
 Although that way may not be obvious at first unless you're Dutch.
-雖然這並不容易，因為你不是 Python 之父（這裏的 Dutch 是指 Guido ）
+雖然這並不容易，因為你不是 Python 之父（這裡的 Dutch 是指 Guido ）
 Now is better than never.
 現在行動好過永遠不行動
 Although never is often better than *right* now.
@@ -2127,7 +2127,7 @@ Try block executed successfully...
 ### > Inpinity/無限 *
 
 英文拼寫是有意的, 請不要為此提交補丁.
-(譯: 這裏是為了突出 Python 中無限的定義與[Pi](https://en.wikipedia.org/wiki/Pi)有關, 所以將兩個單詞拼接了.)
+(譯: 這裡是為了突出 Python 中無限的定義與[Pi](https://en.wikipedia.org/wiki/Pi)有關, 所以將兩個單詞拼接了.)
 
 **Output (Python 3.x):**
 ```py
@@ -2341,7 +2341,7 @@ nan
   ```
 
   **💡 說明:**
-  + python 裏沒有 `++` 操作符. 這其實是兩個 `+` 操作符.
+  + python 裡沒有 `++` 操作符. 這其實是兩個 `+` 操作符.
   + `++a` 被解析為 `+(+a)` 最後等於 `a`. `--a` 同理.
   + 這個 StackOverflow [回答](https://stackoverflow.com/questions/3654830/why-are-there-no-and-operators-in-python) 討論了為什麽 Python 中缺少增量和減量運算符.
 
@@ -2387,7 +2387,7 @@ nan
 
 你可以通過新建 [issue](https://github.com/satwikkansal/wtfpython/issues/new) 或者在上 [Gitter](https://gitter.im/wtfpython/Lobby) 與我們進行討論.
 
-(譯: 如果你想對這個翻譯項目提供幫助, 請看[這裏](https://github.com/leisurelicht/wtfpython-cn/blob/master/CONTRIBUTING.md))
+(譯: 如果你想對這個翻譯項目提供幫助, 請看[這裡](https://github.com/leisurelicht/wtfpython-cn/blob/master/CONTRIBUTING.md))
 
 # Acknowledgements/致謝
 
