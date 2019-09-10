@@ -126,7 +126,7 @@ PS: 如果你不是第一次讀了，你可以在[這裡](https://github.com/sat
 >   # 一些正常的輸入
 >   ```
 
-**註意：**所有的示例都在 Python 3.5.2 版本的交互解釋器上測試過，如果不特別說明應該適用於所有 Python 版本。
+**註：**所有的示例都在 Python 3.5.2 版本的交互解釋器上測試過，如果不特別說明應該適用於所有 Python 版本。
 
 # Usage/用法
 
@@ -166,7 +166,7 @@ $ pip install wtfpython -U
 >>> a = "some_string"
 >>> id(a)
 140420665652016
->>> id("some" + "_" + "string") # 註意兩個的id值是相同的。
+>>> id("some" + "_" + "string") # 註兩個的id值是相同的。
 140420665652016
 ```
 
@@ -183,7 +183,7 @@ True
 False
 
 >>> a, b = "wtf!", "wtf!"
->>> a is b # 僅適用於3.7版本以下, 3.7以後的返回結果為False.
+>>> a is b # 僅適用於3.7版本以下，3.7以後的返回結果為False
 True
 ```
 
@@ -249,7 +249,7 @@ some_dict[5] = "Python"
   >>> hash(5) == hash(5.0)
   True
   ```
-  **註意：**具有不同值的對象也可能具有相同的哈希值（哈希衝突）。
+  **註：**具有不同值的對象也可能具有相同的哈希值（哈希衝突）。
 * 當執行 `some_dict[5] = "Python"` 語句時，因為Python將 `5` 和 `5.0` 識別為 `some_dict` 的同一個鍵，所以已有值 "JavaScript" 就被 "Python" 覆蓋了。
 * 這個 StackOverflow 的 [回答](https://stackoverflow.com/a/32211042/4354153) 漂亮的解釋了這背後的基本原理。
 
@@ -567,7 +567,7 @@ for x in range(7):
     def some_func():
         return x
     funcs.append(some_func)
-    results.append(some_func()) # 註意這裡函數被執行了
+    results.append(some_func()) # 註這裡函數被執行了
 
 funcs_results = [func() for func in funcs]
 ```
@@ -655,7 +655,7 @@ SyntaxError: invalid syntax
 
 - 在Python函數的形式參數列表中，尾隨逗號並不一定是合法的.
 - 在Python中，參數列表部分用前置逗號定義，部分用尾隨逗號定義. 這種衝突導致逗號被夾在中間，沒有規則定義它.(譯:這一句看得我也很懵逼,只能強翻了.詳細解釋看下面的討論帖會一目了然.)
-- **註意:** 尾隨逗號的問題已經在Python 3.6中被[修覆](https://bugs.python.org/issue9232)了. 而這篇[帖子](https://bugs.python.org/issue9232#msg248399)中則簡要討論了Python中尾隨逗號的不同用法.
+- **註:** 尾隨逗號的問題已經在Python 3.6中被[修覆](https://bugs.python.org/issue9232)了. 而這篇[帖子](https://bugs.python.org/issue9232#msg248399)中則簡要討論了Python中尾隨逗號的不同用法.
 ---
 
 ### > Backslashes at the end of string/字符串末尾的反斜杠
@@ -1201,7 +1201,7 @@ a, b = a[b] = {}, 5
 
   > 賦值語句計算表達式列表(expression list)(牢記 這可以是單個表達式或以逗號分隔的列表, 後者返回元組)並將單個結果對象從左到右分配給目標列表中的每一項.
 
-*  `(target_list "=")+` 中的 `+` 意味著可以有**一個或多個**目標列表. 在這個例子中, 目標列表是 `a, b` 和 `a[b]` (註意表達式列表只能有一個, 在我們的例子中是 `{}, 5`).
+*  `(target_list "=")+` 中的 `+` 意味著可以有**一個或多個**目標列表. 在這個例子中, 目標列表是 `a, b` 和 `a[b]` (註表達式列表只能有一個, 在我們的例子中是 `{}, 5`).
 
 * 表達式列表計算結束後, 將其值自動解包後**從左到右**分配給目標列表(target list). 因此, 在我們的例子中, 首先將 `{}, 5` 元組並賦值給 `a, b`, 然後我們就可以得到 `a = {}` 且 `b = 5`.
 
@@ -1252,7 +1252,7 @@ a, b = a[b] = {}, 5
 
 什麽鬼?
 
-**註意:** 如果你想要重現的話最簡單的方法是直接覆制上面的代碼片段到你的文件或命令行裡.
+**註:** 如果你想要重現的話最簡單的方法是直接覆制上面的代碼片段到你的文件或命令行裡.
 
 #### 💡 說明:
 
@@ -1301,7 +1301,7 @@ def energy_receive():
 
 #### 💡 說明:
 
-* 註意在 `energy_send` 函數中創建的 numpy 數組並沒有返回, 因此記憶體空間被釋放並可以被重新分配.
+* 註在 `energy_send` 函數中創建的 numpy 數組並沒有返回, 因此記憶體空間被釋放並可以被重新分配.
 * `numpy.empty()` 直接返回下一段空閑記憶體，而不重新初始化. 而這個記憶體點恰好就是剛剛釋放的那個(通常情況下, 並不絕對).
 
 ---
@@ -1328,7 +1328,7 @@ def square(x):
 
 難道不應該是100嗎?
 
-**註意:** 如果你無法重現, 可以嘗試運行這個文件[mixed_tabs_and_spaces.py](/mixed_tabs_and_spaces.py).
+**註:** 如果你無法重現, 可以嘗試運行這個文件[mixed_tabs_and_spaces.py](/mixed_tabs_and_spaces.py).
 
 #### 💡 說明:
 
@@ -1473,7 +1473,7 @@ for idx, item in enumerate(list_4):
      >>> some_list = [1, 2, 3, 4]
      >>> id(some_list)
      139798789457608
-     >>> id(some_list[:]) # 註意python為切片列表創建了新對象.
+     >>> id(some_list[:]) # 註python為切片列表創建了新對象.
      139798779601192
      ```
 
@@ -1549,7 +1549,7 @@ print(x, ': x in global')
 
 - Python 2.x 和 Python 3.x 解釋器在列表推導式示例中的輸出差異, 在文檔 [What’s New In Python 3.0](https://docs.python.org/3/whatsnew/3.0.html) 中可以找到相關的解釋:
 
-    > "列表推導不再支持句法形式 `[... for var in item1, item2, ...]`. 取而代之的是 `[... for var in (item1, item2, ...)]`. 另外, 註意列表推導具有不同的語義: 它們更接近於 `list()` 構造函數中生成器表達式的語法糖(譯: 這一句我也不是很明白), 特別是循環控制變量不再泄漏到周圍的作用域中."
+    > "列表推導不再支持句法形式 `[... for var in item1, item2, ...]`. 取而代之的是 `[... for var in (item1, item2, ...)]`. 另外, 註列表推導具有不同的語義: 它們更接近於 `list()` 構造函數中生成器表達式的語法糖(譯: 這一句我也不是很明白), 特別是循環控制變量不再泄漏到周圍的作用域中."
 
 ---
 
