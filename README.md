@@ -377,7 +377,7 @@ for i, some_dict[i] in enumerate(some_string):
   >>> i, some_dict[i] = (1, 't')
   >>> i, some_dict[i] = (2, 'f')
   >>> some_dict
-```
+  ```
 
 ---
 
