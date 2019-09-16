@@ -3,7 +3,7 @@
 <p align="center">一些有趣且鮮為人知的 Python 特性。</p>
 <p align="center">
 <a href="https://github.com/satwikkansal/wtfpython">English</a>
-| <a href="#">簡體中文</a>
+| <a href="https://github.com/leisurelicht/wtfpython-cn">簡體中文</a>
 </p>
 
 [![WTFPL 2.0][license-image]][license-url] [![Commit id][commit-image]][commit-url]
