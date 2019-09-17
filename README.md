@@ -540,11 +540,11 @@ board = [row]*3
 
 ![image](/images/tic-tac-toe/after_row_initialized.png)
 
-而當通過對 `row` 做乘法來初始化 `board` 時，記憶體中的情況則如下圖所示 (每個元素 `board[0]`, `board[1]` 和 `board[2]` 都和 `row` 一樣引用了同一列表.)
+而當通過對 `row` 做乘法來初始化 `board` 時，記憶體中的情況則如下圖所示 (每個元素 `board[0]`, `board[1]` 和 `board[2]` 都和 `row` 一樣引用了同一列表。)
 
 ![image](/images/tic-tac-toe/after_board_initialized.png)
 
-我們可以通過不使用變量 `row` 生成 `board` 來避免這種情況. ([這個](https://github.com/satwikkansal/wtfpython/issues/68)issue提出了這個需求.)
+我們可以通過不使用變量 `row` 生成 `board` 來避免這種情況。([這個](https://github.com/satwikkansal/wtfpython/issues/68) issue 提出了這個需求。)
 
 ```py
 >>> board = [['']*3 for _ in range(3)]
@@ -577,7 +577,7 @@ funcs_results = [func() for func in funcs]
 [6, 6, 6, 6, 6, 6, 6]
 ```
 
-即使每次在叠代中將 `some_func` 加入 `funcs` 前的 `x` 值都不相同，所有的函數還是都返回6.
+即使每次在叠代中將 `some_func` 加入 `funcs` 前的 `x` 值都不相同，所有的函數還是都返回 6。
 
 // 再換個例子
 
@@ -589,9 +589,9 @@ funcs_results = [func() for func in funcs]
 
 #### 💡 說明:
 
-- 當在循環內部定義一個函數時，如果該函數在其主體中使用了循環變量，則閉包函數將與循環變量綁定，而不是它的值. 因此，所有的函數都是使用最後分配給變量的值來進行計算的.
+- 當在循環內部定義一個函數時，如果該函數在其主體中使用了循環變量，則閉包函數將與循環變量綁定，而不是它的值。因此，所有的函數都是使用最後分配給變量的值來進行計算的。
 
-- 可以通過將循環變量作為命名變量傳遞給函數來獲得預期的結果. **為什麽這樣可行?** 因為這會在函數內再次定義一個局部變量.
+- 可以通過將循環變量作為命名變量傳遞給函數來獲得預期的結果。**為什麽這樣可行?** 因為這會在函數內再次定義一個局部變量。
 
     ```py
     funcs = []
@@ -621,8 +621,8 @@ False
 
 #### 💡 說明:
 
-- `is not` 是個單獨的二元運算符，與分別使用 `is` 和 `not` 不同.
--  如果操作符兩側的變量指向同一個對象，則 `is not` 的結果為 `False`，否則結果為 `True`.
+- `is not` 是個單獨的二元運算符，與分別使用 `is` 和 `not` 不同。
+-  如果操作符兩側的變量指向同一個對象，則 `is not` 的結果為 `False`，否則結果為 `True`。
 
 ---
 
